@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Covid-19 Info</string>
+    <string name="Bottom_Nav_Guidelines">Guidelines</string>
+    <string name="Bottom_Nav_Statistics">Statistieken</string>
+    <string name="Bottom_Nav_Feed">Feed</string>
+    <string name="Bottom_Nav_Advice">Advies</string>
+</resources>
