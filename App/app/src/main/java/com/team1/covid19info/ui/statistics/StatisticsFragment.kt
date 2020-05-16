@@ -26,8 +26,8 @@ class StatisticsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(StatisticsViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = StatisticsViewModel(requireContext())
+        viewModel.getCovidData()
     }
 
 }

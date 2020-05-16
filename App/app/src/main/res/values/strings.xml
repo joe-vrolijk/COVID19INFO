@@ -4,4 +4,6 @@
     <string name="Bottom_Nav_Statistics">Statistieken</string>
     <string name="Bottom_Nav_Feed">Feed</string>
     <string name="Bottom_Nav_Advice">Advies</string>
+    <string name="SearchCountry">zoek een land</string>
+    <string name="ConnectionErrorString">Het is niet gelukt om de server te bereiken. Bezig met het nogmaals te proberen...</string>
 </resources>
