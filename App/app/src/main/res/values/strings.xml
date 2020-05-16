@@ -13,4 +13,7 @@
     <string name="NewDeaths">Aantal nieuwe sterfgevallen</string>
     <string name="TotalConfirmed">Totaal aantal besmettingen</string>
     <string name="NewConfirmed">Aantal nieuwe besmettingen</string>
+    <string name="title_activity_heatmap">Heatmap</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDeygv5CawLp1vPU44MlR4_mJ92uPSONvA</string>
+    <string name="Loading">Bezig met laden...</string>
 </resources>
