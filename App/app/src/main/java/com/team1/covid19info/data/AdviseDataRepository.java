@@ -5,7 +5,6 @@ import com.team1.covid19info.model.AdviseQuestion;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 public class AdviseDataRepository {
     private Map<Integer, AdviseQuestion> questionMap;
 
@@ -198,7 +197,27 @@ public class AdviseDataRepository {
         return questionMap;
     }
 
-    public AdviseQuestion getNextAdviseQuestion(Integer nextQuestionId){
+    public AdviseQuestion getNextAdviseQuestion(Integer nextQuestionId) {
         return questionMap.get(nextQuestionId);
+    }
+
+    public String getQuestionText(Integer nextQuestionId) {
+        return questionMap.get(nextQuestionId).getQuestionText();
+    }
+
+    public String getAdviseText(Integer nextQuestionId) {
+        return questionMap.get(nextQuestionId).getAdviceText();
+    }
+
+    public int getNextLinkYesAnswer(Integer nextQuestionId) {
+        return questionMap.get(nextQuestionId).getLinkYesAnswer();
+    }
+
+    public int getNextLinkNoAnswer(Integer nextQuestionId) {
+        return questionMap.get(nextQuestionId).getLinkNoAnswer();
+    }
+
+    public int getQuestionMapSize() {
+        return questionMap.size();
     }
 }

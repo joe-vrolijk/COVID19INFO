@@ -6,17 +6,16 @@ public class AdviseQuestion {
     private String questionText;
     private String adviceText;
 
-    public AdviseQuestion( String body, String advice) {
+    public AdviseQuestion(String body, String advice) {
         this.questionText = body;
         this.adviceText = advice;
     }
 
-    public AdviseQuestion( int linkYesAnswer, int linkNoAnswer, String body) {
+    public AdviseQuestion(int linkYesAnswer, int linkNoAnswer, String body) {
         this.linkYesAnswer = linkYesAnswer;
         this.linkNoAnswer = linkNoAnswer;
         this.questionText = body;
     }
-
 
     public int getLinkYesAnswer() {
         return linkYesAnswer;
@@ -34,4 +33,3 @@ public class AdviseQuestion {
         return adviceText;
     }
 }
-
