@@ -2,6 +2,7 @@ package com.team1.covid19info.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.team1.covid19info.R
@@ -16,11 +17,15 @@ class MainActivity : AppCompatActivity() {
         initNavigation()
     }
 
+    fun setToolbarTitle(title: String) {
+        tbTitle.text = title
+    }
+
     private fun initNavigation() {
         val navController = findNavController(R.id.navHostFragment)
         NavigationUI.setupWithNavController(navView, navController)
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            tbTitle.text = destination.label
+            setToolbarTitle(destination.label.toString())
             tbTitle.setTextColor(resources.getColor(R.color.colorTitle))
         }
     }

@@ -26,7 +26,7 @@ class FeedFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(FeedViewModel::class.java)
+        viewModel = FeedViewModel(requireContext())
         // TODO: Use the ViewModel
     }
 

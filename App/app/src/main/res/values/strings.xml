@@ -6,4 +6,11 @@
     <string name="Bottom_Nav_Advice">Advies</string>
     <string name="SearchCountry">zoek een land</string>
     <string name="ConnectionErrorString">Het is niet gelukt om de server te bereiken. Bezig met het nogmaals te proberen...</string>
+    <string name="DefaultStatisticsTitleAppendix">Wereldwijd</string>
+    <string name="TotalRecoveries">Totaal aantal herstelgevallen</string>
+    <string name="NewRecoveries">Aantal nieuwe herstelgevallen</string>
+    <string name="TotalDeaths">Totaal aantal sterfgevallen</string>
+    <string name="NewDeaths">Aantal nieuwe sterfgevallen</string>
+    <string name="TotalConfirmed">Totaal aantal besmettingen</string>
+    <string name="NewConfirmed">Aantal nieuwe besmettingen</string>
 </resources>
