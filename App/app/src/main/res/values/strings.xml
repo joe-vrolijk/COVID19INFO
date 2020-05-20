@@ -13,4 +13,5 @@
     <string name="NewDeaths">Aantal nieuwe sterfgevallen</string>
     <string name="TotalConfirmed">Totaal aantal besmettingen</string>
     <string name="NewConfirmed">Aantal nieuwe besmettingen</string>
+    <string name="tvFirstQuestion">Heeft u koorts, 38 graden Celsius of hoger?</string>
 </resources>

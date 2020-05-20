@@ -1,6 +1,5 @@
 package com.team1.covid19info
 
-import com.team1.covid19info.data.AdviseDataRepository
 import org.junit.Assert.*
 
 import org.junit.Test
