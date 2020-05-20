@@ -4,7 +4,7 @@ class AdviseQuestion {
      var linkYesAnswer: Int = 0
      var linkNoAnswer: Int = 0
      var questionText: String? = null
-     var adviceText: String = ""
+     var adviceText: String? = null
 
     constructor(body: String, advice: String) {
         this.questionText = body

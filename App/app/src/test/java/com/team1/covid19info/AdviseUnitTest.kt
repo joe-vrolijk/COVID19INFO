@@ -1,5 +1,6 @@
 package com.team1.covid19info
 
+import com.team1.covid19info.data.AdviseDataRepository
 import org.junit.Assert.*
 
 import org.junit.Test
@@ -9,12 +10,12 @@ class AdviseUnitTest() {
 
     @Test
     fun checkForCorrectNextYesAnswer() {
-        assertEquals(5, repository.getNextLinkYesAnswer(4).toLong())
+        assertEquals(5, repository.getNextLinkYesAnswer(4))
     }
 
     @Test
     fun checkForCorrectNextNoAnswer() {
-        assertEquals(6, repository.getNextLinkNoAnswer(4).toLong())
+        assertEquals(6, repository.getNextLinkNoAnswer(4))
     }
 
     @Test
