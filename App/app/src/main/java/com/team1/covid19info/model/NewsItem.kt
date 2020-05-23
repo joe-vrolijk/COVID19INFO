@@ -1,8 +1,11 @@
 package com.team1.covid19info.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 import java.util.*
 
+@Parcelize
 data class NewsItem(
     @SerializedName("name")
     val title: String,
@@ -16,4 +19,4 @@ data class NewsItem(
     val provider: String,
     @SerializedName("datePublished")
     val pubDate: Date
-    ){}
+    ): Parcelable

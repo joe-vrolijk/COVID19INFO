@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.team1.covid19info.R
 import com.team1.covid19info.model.NewsItem
+import kotlinx.android.synthetic.main.component_newsitem.view.*
 
 class FeedRvAdapter(private val newsItems: List<NewsItem>, private val onClick: (NewsItem) -> Unit) : RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
 
@@ -31,8 +34,10 @@ class FeedRvAdapter(private val newsItems: List<NewsItem>, private val onClick: 
         }
 
         fun bind(newsItem: NewsItem){
-//            itemView.tvNumber.text = (movies.indexOf(movie) + 1).toString()
-//            Glide.with(context).load(movie.getPosterImageUrl()).into(itemView.ivPoster)
+            Glide.with(context).load(newsItem.image).into(itemView.feedrv_img)
+            itemView.feedrv_title.text = newsItem.title
+            itemView.feedrv_pubdate.text = newsItem.pubDate.toString()
+            itemView.feedrv_content.text = newsItem.content
         }
     }
 }
