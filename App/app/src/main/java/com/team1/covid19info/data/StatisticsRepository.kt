@@ -13,21 +13,21 @@ class StatisticsRepository {
     var service: StatisticsService
 
     init {
-        val gsonBuilder = GsonBuilder()
-        gsonBuilder.registerTypeAdapter(Date::class.java, DateDeserializer())
+    val gsonBuilder = GsonBuilder()
+    gsonBuilder.registerTypeAdapter(Date::class.java, DateDeserializer())
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl(statisticsApiBaseUrl)
-            .addConverterFactory(
-                GsonConverterFactory.create(
-                    gsonBuilder.create()
-                ))
-            .build()
+    val retrofit = Retrofit.Builder()
+        .baseUrl(statisticsApiBaseUrl)
+        .addConverterFactory(
+            GsonConverterFactory.create(
+                gsonBuilder.create()
+            ))
+        .build()
 
-        service = retrofit.create(StatisticsService::class.java)
-    }
+    service = retrofit.create(StatisticsService::class.java)
+}
 
-    suspend fun getCovidData() : StatisticsApiResponse {
-        return service.getCovidData()
-    }
+suspend fun getCovidData() : StatisticsApiResponse {
+    return service.getCovidData()
+}
 }

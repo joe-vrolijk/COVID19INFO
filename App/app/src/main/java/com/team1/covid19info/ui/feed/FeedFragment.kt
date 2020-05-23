@@ -8,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.team1.covid19info.R
+import com.team1.covid19info.model.NewsItem
 
 class FeedFragment : Fragment() {
+
+    private val newsItems = arrayListOf<NewsItem>()
+//    private val newsRvAdapter
 
     companion object {
         fun newInstance() = FeedFragment()
