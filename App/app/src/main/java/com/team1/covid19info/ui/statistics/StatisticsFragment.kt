@@ -6,40 +6,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 
 import com.team1.covid19info.R
 import com.team1.covid19info.ui.MainActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.component_covid_data.*
 import kotlinx.android.synthetic.main.component_heatmap.*
-import android.R.string.no
 import android.location.Geocoder
-import android.view.KeyEvent
-import android.widget.EditText
+import android.os.Handler
 import android.widget.PopupMenu
 import androidx.core.widget.addTextChangedListener
 import com.anychart.APIlib
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.TileOverlayOptions
-import com.google.maps.android.heatmaps.Gradient
 import com.google.maps.android.heatmaps.HeatmapTileProvider
 import com.google.maps.android.heatmaps.WeightedLatLng
 import com.team1.covid19info.model.StatisticsCountry
 import kotlinx.android.synthetic.main.fragment_statistics.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.util.*
-import kotlin.collections.ArrayList
 import com.anychart.AnyChart
 import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
 import com.anychart.charts.Pie
+import com.google.android.gms.maps.model.TileOverlay
 import kotlinx.android.synthetic.main.component_piechart.*
 
 
@@ -48,12 +39,11 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
     private lateinit var googleMap: GoogleMap
     private lateinit var mapView: MapView
     private val MAPVIEW_BUNDLE_KEY = "MapViewBundleKey"
-    private val heatMapData = MutableLiveData<List<WeightedLatLng>>()
     private var pieChart: Pie? = null
 
-    companion object {
-        fun newInstance() = StatisticsFragment()
-    }
+    private val heatMapWeightedList = arrayListOf<WeightedLatLng>()
+    private var heatMapTileProvider: HeatmapTileProvider? = null
+    private lateinit var overlay: TileOverlay
 
     private lateinit var viewModel: StatisticsViewModel
     private var selectedCountry = MutableLiveData<StatisticsCountry>()
@@ -67,8 +57,7 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        initViewModel()
-        initViews()
+
         val mapViewBundle = savedInstanceState?.getBundle(MAPVIEW_BUNDLE_KEY)
         mapView = requireView().findViewById(R.id.mvHeatmap)
         mapView.onCreate(mapViewBundle)
@@ -81,36 +70,49 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
             updateViews()
         })
         viewModel.countryStatistics.observe(viewLifecycleOwner, Observer {
-            val scope = CoroutineScope(Dispatchers.Default)
-
-            scope.launch {
-                val data = ArrayList<WeightedLatLng>()
-                for (country in it) {
+            Thread {
+                val updatePoints = it.size / 3
+                for ((i, country) in it.withIndex()) {
                     val geoCoder = Geocoder(context, Locale.getDefault())
                     val geoDataList = geoCoder.getFromLocationName(country.country, 1)
                     if (geoDataList.isNotEmpty())
                     {
                         val geoData = geoDataList[0]
-                        data.add(WeightedLatLng(LatLng(geoData.latitude, geoData.longitude), country.totalConfirmed.toDouble()))
+                        heatMapWeightedList.add(WeightedLatLng(LatLng(geoData.latitude, geoData.longitude), country.totalConfirmed.toDouble()))
+                        if (heatMapTileProvider == null) {
+                            initHeatMap()
+                        } else if (i % updatePoints == 0) {
+                            updateHeatMap()
+                        }
                     }
                 }
-                heatMapData.postValue(data)
-            }
+                updateHeatMap()
+                clLoadingHeatmap.visibility = View.INVISIBLE
+            }.start()
         })
         viewModel.getCovidData()
         viewModel.error.observe(viewLifecycleOwner, Observer {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         })
-        heatMapData.observe(viewLifecycleOwner, Observer {
-            val heatMapProvider = HeatmapTileProvider.Builder()
-                .weightedData(it) // load our weighted data
+    }
+
+    private fun initHeatMap() {
+        Handler(requireContext().mainLooper).post {
+            heatMapTileProvider = HeatmapTileProvider.Builder()
+                .weightedData(heatMapWeightedList) // load our weighted data
                 .radius(20) // optional, in pixels, can be anything between 20 and 50
                 .maxIntensity(1000.0) // set the maximum intensity
                 .build()
 
-            googleMap.addTileOverlay(TileOverlayOptions().tileProvider(heatMapProvider))
-            clLoadingHeatmap.visibility = View.INVISIBLE
-        })
+            overlay = googleMap.addTileOverlay(TileOverlayOptions().tileProvider(heatMapTileProvider))
+        }
+    }
+
+    private fun updateHeatMap() {
+        Handler(requireContext().mainLooper).post {
+            heatMapTileProvider!!.setWeightedData(heatMapWeightedList)
+            overlay.clearTileCache()
+        }
     }
 
     private fun initViews() {
@@ -219,6 +221,8 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
         MapsInitializer.initialize(activity)
         map.uiSettings.isZoomControlsEnabled = false
         map.uiSettings.isZoomGesturesEnabled = false
+        initViewModel()
+        initViews()
     }
 
     override fun onPause() {
