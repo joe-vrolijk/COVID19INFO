@@ -51,17 +51,16 @@ class FeedFragment : Fragment() {
 //        viewModel = ViewModelProviders.of(this).get(FeedViewModel::class.java)
         viewModel = FeedViewModel(requireContext())
         viewModel.newsItems.observe(viewLifecycleOwner, Observer {
-            viewModel.getCovidNews()
+            newsItems.clear()
+            newsItems.addAll(it)
+            newsRvAdapter.notifyDataSetChanged()
         })
+        viewModel.getCovidNews()
     }
 
     private fun onNewsItemClick(newsItem: NewsItem){
         Toast.makeText(context, "This is a test! Popup Screen Now! - " + newsItem.title, Toast.LENGTH_LONG);
 
     }
-
-
-
-
 
 }
