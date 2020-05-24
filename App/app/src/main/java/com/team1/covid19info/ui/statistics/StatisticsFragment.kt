@@ -47,6 +47,8 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var viewModel: StatisticsViewModel
     private var selectedCountry = MutableLiveData<StatisticsCountry>()
+    private lateinit var handler: Handler
+    private var thread: Thread? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +59,7 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        handler = Handler(requireContext().mainLooper)
         val mapViewBundle = savedInstanceState?.getBundle(MAPVIEW_BUNDLE_KEY)
         mapView = requireView().findViewById(R.id.mvHeatmap)
         mapView.onCreate(mapViewBundle)
@@ -70,10 +72,10 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
             updateViews()
         })
         viewModel.countryStatistics.observe(viewLifecycleOwner, Observer {
-            Thread {
-                val updatePoints = it.size / 3
+            thread = Thread {
+                val updatePoints = it.size / 4
+                val geoCoder = Geocoder(context, Locale.getDefault())
                 for ((i, country) in it.withIndex()) {
-                    val geoCoder = Geocoder(context, Locale.getDefault())
                     val geoDataList = geoCoder.getFromLocationName(country.country, 1)
                     if (geoDataList.isNotEmpty())
                     {
@@ -84,11 +86,17 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
                         } else if (i % updatePoints == 0) {
                             updateHeatMap()
                         }
+                        else if (Thread.currentThread().isInterrupted) {
+                            break
+                        }
                     }
                 }
-                updateHeatMap()
-                clLoadingHeatmap.visibility = View.INVISIBLE
-            }.start()
+                if (!Thread.currentThread().isInterrupted) {
+                    updateHeatMap()
+                    clLoadingHeatmap.visibility = View.INVISIBLE
+                }
+            }
+            thread!!.start()
         })
         viewModel.getCovidData()
         viewModel.error.observe(viewLifecycleOwner, Observer {
@@ -97,7 +105,7 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun initHeatMap() {
-        Handler(requireContext().mainLooper).post {
+        handler.post {
             heatMapTileProvider = HeatmapTileProvider.Builder()
                 .weightedData(heatMapWeightedList) // load our weighted data
                 .radius(20) // optional, in pixels, can be anything between 20 and 50
@@ -109,7 +117,7 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun updateHeatMap() {
-        Handler(requireContext().mainLooper).post {
+        handler.post {
             heatMapTileProvider!!.setWeightedData(heatMapWeightedList)
             overlay.clearTileCache()
         }
@@ -242,11 +250,25 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onStop() {
         mapView.onStop()
+        killThreadIfPresent()
         super.onStop()
     }
 
     override fun onDestroy() {
         mapView.onDestroy()
+        killThreadIfPresent()
         super.onDestroy()
+    }
+
+    override fun onDetach() {
+        killThreadIfPresent()
+        super.onDetach()
+    }
+
+    private fun killThreadIfPresent() {
+        if (thread != null) {
+            thread!!.interrupt()
+            thread = null
+        }
     }
 }
