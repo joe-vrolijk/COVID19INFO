@@ -341,8 +341,8 @@ class AdviseDataRepository {
         )
     }
 
-    fun getNextAdviseQuestion(questionId: Int): AdviseQuestion? {
-        return questionList[questionId]
+    fun getQuestions() : List<AdviseQuestion>{
+        return questionList
     }
 
     fun getQuestionText(questionId: Int): String? {
