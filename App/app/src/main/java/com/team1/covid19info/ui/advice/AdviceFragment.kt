@@ -40,10 +40,12 @@ class AdviceFragment : Fragment() {
 
         tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
         tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
+        btnReset.setVisibility(View.INVISIBLE)
+
 
         if (repo.getAdviseText(currentAdviseQuestion) != null) {
-            btnJa.setVisibility(View.GONE)
-            btnNee.setVisibility(View.GONE)
+            btnJa.setVisibility(View.INVISIBLE)
+            btnNee.setVisibility(View.INVISIBLE)
         }
 
         btnJa.setOnClickListener() {
@@ -60,6 +62,7 @@ class AdviceFragment : Fragment() {
                 tvAdvise.setVisibility(View.INVISIBLE)
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
             }
+            btnReset.setVisibility(View.VISIBLE)
         }
 
         btnNee.setOnClickListener() {
@@ -76,6 +79,7 @@ class AdviceFragment : Fragment() {
                 tvAdvise.setVisibility(View.INVISIBLE)
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
             }
+            btnReset.setVisibility(View.VISIBLE)
         }
 
         btnReset.setOnClickListener() {
@@ -84,6 +88,7 @@ class AdviceFragment : Fragment() {
             btnNee.setVisibility(View.VISIBLE)
             tvAdvise.setVisibility(View.INVISIBLE)
             tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
+            btnReset.setVisibility(View.INVISIBLE)
         }
     }
 }

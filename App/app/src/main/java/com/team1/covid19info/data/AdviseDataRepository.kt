@@ -11,7 +11,8 @@ public class AdviseDataRepository {
             AdviseQuestion( // index: 0
                 1,
                 18,
-                "Heeft u koorts, 38 graden Celsius of hoger?"
+                "Heeft u koorts, 38 graden Celsius of hoger?\nKoorts is een gemeten " +
+                        "temperatuur boven de 38 graden Celsius, dus geen schatting."
             ),
             AdviseQuestion( // index: 1
                 2,
