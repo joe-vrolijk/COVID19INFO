@@ -2,7 +2,7 @@ package com.team1.covid19info.data
 
 import com.team1.covid19info.model.AdviseQuestion
 
-class AdviseDataRepository {
+public class AdviseDataRepository {
 
     val questionList: List<AdviseQuestion>
 
@@ -341,8 +341,12 @@ class AdviseDataRepository {
         )
     }
 
-    fun getQuestions() : List<AdviseQuestion>{
+    fun getQuestions(): List<AdviseQuestion> {
         return questionList
+    }
+
+    fun isAdvice(questionId: Int): Boolean {
+        return (questionList[questionId].adviceText != null)
     }
 
     fun getQuestionText(questionId: Int): String? {
@@ -355,12 +359,12 @@ class AdviseDataRepository {
         return question.adviceText
     }
 
-    fun getNextLinkYesAnswer(questionId: Int): Int? {
+    fun getLinkYesId(questionId: Int): Int {
         val question: AdviseQuestion = questionList[questionId]
         return question.linkYesAnswer
     }
 
-    fun getNextLinkNoAnswer(questionId: Int): Int? {
+    fun getLinkNoId(questionId: Int): Int {
         val question: AdviseQuestion = questionList[questionId]
         return question.linkNoAnswer
     }

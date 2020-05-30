@@ -8,12 +8,29 @@
     tools:context=".ui.advice.AdviceFragment">
 
     <TextView
-        android:id="@+id/tvQuestion"
+        android:id="@+id/tvAdvise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/tvFirstQuestion"
+        android:scaleX=".75"
+        android:text="@string/advise"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnReset"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJa" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="407dp"
+        android:layout_height="83dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/tvFirstQuestion"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnJa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,8 +43,18 @@
         app:layout_constraintEnd_toStartOf="@+id/btnNee"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdvise" />
 
     <Button
         android:id="@+id/btnNee"
@@ -38,21 +65,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnJa"
-        app:layout_constraintTop_toBottomOf="@+id/tvQuestion"
-        app:layout_constraintVertical_bias="0.06" />
-
-    <TextView
-        android:id="@+id/tvAdvise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:scaleX=".75"
-        android:text="@string/advise"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
