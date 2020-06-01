@@ -40,55 +40,54 @@ class AdviceFragment : Fragment() {
 
         tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
         tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
-        btnReset.setVisibility(View.INVISIBLE)
-
+        btnReset.visibility = View.INVISIBLE
 
         if (repo.getAdviseText(currentAdviseQuestion) != null) {
-            btnJa.setVisibility(View.INVISIBLE)
-            btnNee.setVisibility(View.INVISIBLE)
+            btnJa.visibility = View.INVISIBLE
+            btnNee.visibility = View.INVISIBLE
         }
 
         btnJa.setOnClickListener() {
             currentAdviseQuestion = repo.getLinkYesId(currentAdviseQuestion)
             if (repo.isAdvice(currentAdviseQuestion)) {
-                btnJa.setVisibility(View.INVISIBLE)
-                btnNee.setVisibility(View.INVISIBLE)
-                tvAdvise.setVisibility(View.VISIBLE)
+                btnJa.visibility = View.INVISIBLE
+                btnNee.visibility = View.INVISIBLE
+                tvAdvise.visibility = View.VISIBLE
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
                 tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
             } else {
-                btnJa.setVisibility(View.VISIBLE)
-                btnNee.setVisibility(View.VISIBLE)
-                tvAdvise.setVisibility(View.INVISIBLE)
+                btnJa.visibility = View.VISIBLE
+                btnNee.visibility = View.VISIBLE
+                tvAdvise.visibility = View.INVISIBLE
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
             }
-            btnReset.setVisibility(View.VISIBLE)
+            btnReset.visibility = View.VISIBLE
         }
 
         btnNee.setOnClickListener() {
             currentAdviseQuestion = repo.getLinkNoId(currentAdviseQuestion)
             if (repo.isAdvice(currentAdviseQuestion)) {
-                btnJa.setVisibility(View.INVISIBLE)
-                btnNee.setVisibility(View.INVISIBLE)
-                tvAdvise.setVisibility(View.VISIBLE)
+                btnJa.visibility = View.INVISIBLE
+                btnNee.visibility = View.INVISIBLE
+                tvAdvise.visibility = View.VISIBLE
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
                 tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
             } else {
-                btnJa.setVisibility(View.VISIBLE)
-                btnNee.setVisibility(View.VISIBLE)
-                tvAdvise.setVisibility(View.INVISIBLE)
+                btnJa.visibility = View.VISIBLE
+                btnNee.visibility = View.VISIBLE
+                tvAdvise.visibility = View.INVISIBLE
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
             }
-            btnReset.setVisibility(View.VISIBLE)
+            btnReset.visibility = View.VISIBLE
         }
 
         btnReset.setOnClickListener() {
             currentAdviseQuestion = 0
-            btnJa.setVisibility(View.VISIBLE)
-            btnNee.setVisibility(View.VISIBLE)
-            tvAdvise.setVisibility(View.INVISIBLE)
+            btnJa.visibility = View.VISIBLE
+            btnNee.visibility = View.VISIBLE
+            tvAdvise.visibility = View.INVISIBLE
             tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-            btnReset.setVisibility(View.INVISIBLE)
+            btnReset.visibility = View.INVISIBLE
         }
     }
 }
