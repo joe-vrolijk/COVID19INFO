@@ -27,7 +27,7 @@ class StatisticsRepository {
         service = retrofit.create(StatisticsService::class.java)
     }
 
-    suspend fun getCovidData() : StatisticsApiResponse {
-        return service.getCovidData()
-    }
+    suspend fun getCovidData() = service.getCovidData()
+
+    suspend fun getCountryData(country: String) = service.getCountryData(country)
 }
