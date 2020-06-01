@@ -21,4 +21,9 @@
     <string name="title_activity_heatmap">Heatmap</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDeygv5CawLp1vPU44MlR4_mJ92uPSONvA</string>
     <string name="Loading">Bezig met laden...</string>
+    <string name="readmore">Lees meer</string>
+
+
+<!--    //remove lorem ipsum-->
+    <string name="lorem">Lorem Ipsum</string>
 </resources>
