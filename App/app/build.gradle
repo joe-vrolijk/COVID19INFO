@@ -12,7 +12,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.team1.covid19info"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -47,4 +47,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.3.0"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation 'com.google.maps.android:android-maps-utils:1.2.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'ir.farshid_roohi:linegraph:0.1.3'
 }

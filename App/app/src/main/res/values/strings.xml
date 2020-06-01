@@ -18,4 +18,7 @@
     <string name="ja">Ja</string>
     <string name="nee">Nee</string>
     <string name="restart">Opnieuw</string>
+    <string name="title_activity_heatmap">Heatmap</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDeygv5CawLp1vPU44MlR4_mJ92uPSONvA</string>
+    <string name="Loading">Bezig met laden...</string>
 </resources>
