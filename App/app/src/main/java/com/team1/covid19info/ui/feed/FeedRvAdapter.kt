@@ -10,9 +10,10 @@ import com.team1.covid19info.R
 import com.team1.covid19info.model.NewsItem
 import kotlinx.android.synthetic.main.component_newsitem.view.*
 
-class FeedRvAdapter(private val newsItems: List<NewsItem>, private val onClick: (NewsItem) -> Unit) : RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
+class FeedRvAdapter(private val newsItems: List<NewsItem>) : RecyclerView.Adapter<FeedRvAdapter.ViewHolder>() {
 
     private lateinit var context: Context
+    private var listener: ((item: NewsItem) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedRvAdapter.ViewHolder {
         context = parent.context;
@@ -26,18 +27,23 @@ class FeedRvAdapter(private val newsItems: List<NewsItem>, private val onClick: 
 
     override fun onBindViewHolder(holder: FeedRvAdapter.ViewHolder, position: Int) = holder.bind(newsItems[position])
 
+    fun setOnItemClickListener(listener: (item: NewsItem) -> Unit) {
+        this.listener = listener
+    }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         init {
-            itemView.setOnClickListener{
-                onClick(newsItems[adapterPosition])
+            itemView.feedrvreadmore.setOnClickListener{
+                listener?.invoke(newsItems[adapterPosition])
             }
+
         }
 
         fun bind(newsItem: NewsItem){
-            Glide.with(context).load(newsItem.image).into(itemView.feedrv_img)
+            Glide.with(context).load(newsItem.image.thumbnail.contentUrl).into(itemView.feedrv_img)
             itemView.feedrv_title.text = newsItem.title
             itemView.feedrv_pubdate.text = newsItem.pubDate.toString()
-            itemView.feedrv_content.text = newsItem.content
+            itemView.feedrv_content.text = newsItem.content + "....."
         }
     }
 }

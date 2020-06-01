@@ -11,8 +11,8 @@ data class NewsItem(
     val title: String,
     @SerializedName("url")
     val url: String,
-    @SerializedName("image.thumbnail.contentUrl")
-    val image: String,
+    @SerializedName("image")
+    val image: Image,
     @SerializedName("description")
     val content: String,
     @SerializedName("provider.0.name")
@@ -20,3 +20,13 @@ data class NewsItem(
     @SerializedName("datePublished")
     val pubDate: Date
     ): Parcelable
+
+@Parcelize
+data class Image(
+    @SerializedName("thumbnail") var thumbnail: Thumbnail
+): Parcelable
+
+@Parcelize
+data class Thumbnail(
+    @SerializedName("contentUrl") var contentUrl: String
+): Parcelable
