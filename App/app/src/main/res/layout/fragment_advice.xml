@@ -8,12 +8,68 @@
     tools:context=".ui.advice.AdviceFragment">
 
     <TextView
-        android:id="@+id/temp"
+        android:id="@+id/tvQuestion"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Advice werkt"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/tvFirstQuestion"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/btnJa"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAdvise"
+        android:layout_width="358dp"
+        android:layout_height="272dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/advise"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/btnReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJa" />
+
+    <Button
+        android:id="@+id/btnJa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ja"
+        app:layout_constraintBottom_toTopOf="@+id/tvAdvise"
+        app:layout_constraintEnd_toStartOf="@+id/btnNee"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdvise" />
+
+    <Button
+        android:id="@+id/btnNee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nee"
+        app:layout_constraintBottom_toTopOf="@+id/tvAdvise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnJa"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

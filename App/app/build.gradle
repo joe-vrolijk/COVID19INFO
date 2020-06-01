@@ -60,4 +60,7 @@ dependencies {
 
     //Chrome custom tabs
     implementation 'androidx.browser:browser:1.0.0'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'ir.farshid_roohi:linegraph:0.1.3'
 }
