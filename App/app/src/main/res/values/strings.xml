@@ -13,6 +13,11 @@
     <string name="NewDeaths">Aantal nieuwe sterfgevallen</string>
     <string name="TotalConfirmed">Totaal aantal besmettingen</string>
     <string name="NewConfirmed">Aantal nieuwe besmettingen</string>
+    <string name="tvFirstQuestion">Heeft u koorts, 38 graden Celsius of hoger?</string>
+    <string name="advise">Ons Advies:\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies laoreet finibus. Nullam malesuada sed dolor ut vehicula. Donec dignissim ex sit amet tellus dictum, vitae ornare nulla congue. Etiam lacinia, mauris ac feugiat fringilla, erat augue molestie tellus, vitae sollicitudin mi nulla et magna. Ut vel felis ut magna gravida tincidunt hendrerit nec lorem. Cras justo purus, lobortis at.</string>
+    <string name="ja">Ja</string>
+    <string name="nee">Nee</string>
+    <string name="restart">Opnieuw</string>
     <string name="title_activity_heatmap">Heatmap</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDeygv5CawLp1vPU44MlR4_mJ92uPSONvA</string>
     <string name="Loading">Bezig met laden...</string>
