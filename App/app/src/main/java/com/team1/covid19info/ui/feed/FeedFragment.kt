@@ -4,26 +4,26 @@ package com.team1.covid19info.ui.feed
 import android.app.PendingIntent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.team1.covid19info.R
+import com.team1.covid19info.data.FirebaseDao
 import com.team1.covid19info.model.NewsItem
 import kotlinx.android.synthetic.main.fragment_feed.*
+
 
 class FeedFragment : Fragment() {
 
     private val newsItems = arrayListOf<NewsItem>()
     private val feedRvAdapter = FeedRvAdapter(newsItems)
+    private val firebaseDao = FirebaseDao()
 
     companion object {
         fun newInstance() = FeedFragment()
@@ -61,6 +61,7 @@ class FeedFragment : Fragment() {
         })
         viewModel.getCovidNews()
     }
+
 
     private fun openCustomTab(url: String){
         val builder = CustomTabsIntent.Builder()
