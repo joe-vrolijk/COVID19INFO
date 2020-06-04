@@ -31,7 +31,8 @@ public class AdviseDataRepository {
                         "hebben even boodschappen doen. Als iedereen 24 uur geen klachten heeft, " +
                         "mag u weer naar buiten. Voor meer informatie klik op onderstaande " +
                         "button. Zorg dat u anderen niet besmet. Houd dus afstand tot andere " +
-                        "mensen. Houdt de komende 14 dagen uw gezondheid in de gaten."
+                        "mensen. Houdt de komende 14 dagen uw gezondheid in de gaten.",
+                true
             ),
             AdviseQuestion( // index: 3
                 4,
@@ -56,7 +57,8 @@ public class AdviseDataRepository {
                         "Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met " +
                         "de huisarts als de klachten verergeren en u medische hulp nodig hebt: " +
                         "verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of " +
-                        "benauwdheid."
+                        "benauwdheid.",
+                true
             ),
             AdviseQuestion( // index: 6
                 "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de " +
@@ -70,7 +72,8 @@ public class AdviseDataRepository {
                         "de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de " +
                         "huisarts als de klachten verergeren en u medische hulp nodig hebt: " +
                         "verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of " +
-                        "benauwdheid."
+                        "benauwdheid.",
+                true
             ),
             AdviseQuestion( // index: 7
                 8,
@@ -89,7 +92,8 @@ public class AdviseDataRepository {
                         "komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts " +
                         "als de klachten verergeren en u medische hulp nodig hebt: " +
                         "verkoudheidsklachten met koorts (38 graden Celsius of hoger) " +
-                        "en/of benauwdheid."
+                        "en/of benauwdheid.",
+                true
             ),
             AdviseQuestion( // index: 9
                 10,
@@ -109,7 +113,8 @@ public class AdviseDataRepository {
                         "U kunt tot 14 dagen na het laatste contact met deze persoon nog ziek " +
                         "worden, daarom moet u thuis in quarantaine blijven. U kunt klachten " +
                         "krijgen zoals verkoudheid, hoesten en koorts. De informatie via " +
-                        "onderstaande button is voor u van belang."
+                        "onderstaande button is voor u van belang.",
+                true
             ),
             AdviseQuestion( // index: 12
                 13,
@@ -125,7 +130,8 @@ public class AdviseDataRepository {
                         "klachten heeft), even boodschappen doen. U kunt weer naar buiten " +
                         "wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat " +
                         "betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer " +
-                        "informatie klik op onderstaande button."
+                        "informatie klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 14
                 "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM " +
@@ -136,7 +142,8 @@ public class AdviseDataRepository {
                         "boodschappen doen. U kunt weer naar buiten wanneer u en alle " +
                         "huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen " +
                         "koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie " +
-                        "klik op onderstaande button."
+                        "klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 15
                 16,
@@ -152,7 +159,8 @@ public class AdviseDataRepository {
                         "klachten heeft), even boodschappen doen. U kunt weer naar buiten " +
                         "wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat " +
                         "betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer " +
-                        "informatie klik op onderstaande button."
+                        "informatie klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 17
                 "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de " +
@@ -166,7 +174,8 @@ public class AdviseDataRepository {
                         "de hond uitlaat. Voor huisgenoten zonder klachten gelden de regels die " +
                         "voor iedereen in Nederland gelden. Als u 24 uur lang geen klachten " +
                         "hebt, mag u weer naar buiten. Voor meer informatie klik op onderstaande " +
-                        "button."
+                        "button.",
+                true
             ),
             AdviseQuestion( // index: 18
                 19,
@@ -187,7 +196,8 @@ public class AdviseDataRepository {
                         "coronavirus nodig is, maar mogelijk heeft u andere klachten. Ga niet " +
                         "naar het spreekuur, maar blijf thuis! Om verspreiding te voorkomen " +
                         "wordt u gevraagd zoveel mogelijk thuis te blijven en 1,5 meter " +
-                        "afstand te houden. Voor meer informatie klik op onderstaande button."
+                        "afstand te houden. Voor meer informatie klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 21
                 22,
@@ -207,7 +217,8 @@ public class AdviseDataRepository {
                         "U kunt tot 14 dagen na het laatste contact met deze persoon nog ziek " +
                         "worden, daarom moet u thuis in quarantaine blijven. U kunt klachten " +
                         "krijgen zoals verkoudheid, hoesten en koorts. De informatie via " +
-                        "onderstaande button is voor u van belang."
+                        "onderstaande button is voor u van belang.",
+                true
             ),
             AdviseQuestion( // index: 24
                 25,
@@ -223,7 +234,8 @@ public class AdviseDataRepository {
                         "klachten heeft), even boodschappen doen. U kunt weer naar buiten " +
                         "wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat " +
                         "betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer " +
-                        "informatie klik op onderstaande button."
+                        "informatie klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 26
                 "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM " +
@@ -234,7 +246,8 @@ public class AdviseDataRepository {
                         "boodschappen doen. U kunt weer naar buiten wanneer u en alle " +
                         "huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen " +
                         "koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik " +
-                        "op onderstaande button."
+                        "op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 27
                 28,
@@ -250,7 +263,8 @@ public class AdviseDataRepository {
                         "klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer" +
                         " u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: " +
                         "geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie " +
-                        "klik op onderstaande button."
+                        "klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 29
                 "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de " +
@@ -264,7 +278,8 @@ public class AdviseDataRepository {
                         "de hond uitlaat. Voor huisgenoten zonder klachten gelden de regels die " +
                         "voor iedereen in Nederland gelden. Als u 24 uur lang geen klachten " +
                         "hebt, mag u weer naar buiten. Voor meer informatie klik op onderstaande " +
-                        "button."
+                        "button.",
+                true
             ),
             AdviseQuestion( // index: 30
                 31,
@@ -284,7 +299,8 @@ public class AdviseDataRepository {
                         "U kunt tot 14 dagen na het laatste contact met deze persoon nog ziek " +
                         "worden, daarom moet u thuis in quarantaine blijven. U kunt klachten " +
                         "krijgen zoals verkoudheid, hoesten en koorts. De informatie via " +
-                        "onderstaande button is voor u van belang."
+                        "onderstaande button is voor u van belang.",
+                true
             ),
             AdviseQuestion( // index: 33
                 34,
@@ -300,7 +316,8 @@ public class AdviseDataRepository {
                         "klachten heeft), even boodschappen doen. U kunt weer naar buiten " +
                         "wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. " +
                         "Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. " +
-                        "Voor meer informatie klik op onderstaande button."
+                        "Voor meer informatie klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 35
                 "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM " +
@@ -311,7 +328,8 @@ public class AdviseDataRepository {
                         "boodschappen doen. U kunt weer naar buiten wanneer u en alle " +
                         "huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen " +
                         "koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie " +
-                        "klik op onderstaande button."
+                        "klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 36
                 37,
@@ -327,7 +345,8 @@ public class AdviseDataRepository {
                         "klachten heeft), even boodschappen doen. U kunt weer naar buiten " +
                         "wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat " +
                         "betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer " +
-                        "informatie klik op onderstaande button."
+                        "informatie klik op onderstaande button.",
+                true
             ),
             AdviseQuestion( // index: 38
                 "U hoeft niet naar de dokter\nOp basis van de door u ingevulde gegevens " +
@@ -337,7 +356,8 @@ public class AdviseDataRepository {
                         "thuis te blijven. 1,5 meter afstand te houden. Alleen naar buiten te " +
                         "gaan als dat nodig is en ga niet op bezoek bij mensen van 70 jaar of " +
                         "ouder en mensen met een kwetsbare gezondheid. Voor meer informatie " +
-                        "klik op onderstaande button."
+                        "klik op onderstaande button.",
+                true
             )
         )
     }
@@ -368,5 +388,10 @@ public class AdviseDataRepository {
     fun getLinkNoId(questionId: Int): Int {
         val question: AdviseQuestion = questionList[questionId]
         return question.linkNoAnswer
+    }
+
+    fun hasInfoButton(questionId: Int): Boolean{
+        val question : AdviseQuestion=questionList[questionId]
+        return question.infoButton
     }
 }

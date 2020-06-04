@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import com.team1.covid19info.R
 import com.team1.covid19info.data.AdviseDataRepository
 import kotlinx.android.synthetic.main.fragment_advice.*
+import android.content.Intent
+import android.net.Uri
+
 
 class AdviceFragment : Fragment() {
     companion object {
@@ -40,7 +43,8 @@ class AdviceFragment : Fragment() {
 
         tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
         tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
-        btnReset.visibility = View.INVISIBLE
+        btnReset.visibility = View.GONE
+        btnInfo.visibility = View.GONE
 
         if (repo.getAdviseText(currentAdviseQuestion) != null) {
             btnJa.visibility = View.INVISIBLE
@@ -62,6 +66,11 @@ class AdviceFragment : Fragment() {
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
             }
             btnReset.visibility = View.VISIBLE
+            if (repo.hasInfoButton(currentAdviseQuestion)) {
+                btnInfo.visibility = View.VISIBLE
+            } else {
+                btnInfo.visibility = View.GONE
+            }
         }
 
         btnNee.setOnClickListener() {
@@ -79,6 +88,11 @@ class AdviceFragment : Fragment() {
                 tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
             }
             btnReset.visibility = View.VISIBLE
+            if (repo.hasInfoButton(currentAdviseQuestion)) {
+                btnInfo.visibility = View.VISIBLE
+            } else {
+                btnInfo.visibility = View.GONE
+            }
         }
 
         btnReset.setOnClickListener() {
@@ -87,7 +101,13 @@ class AdviceFragment : Fragment() {
             btnNee.visibility = View.VISIBLE
             tvAdvise.visibility = View.INVISIBLE
             tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-            btnReset.visibility = View.INVISIBLE
+            btnReset.visibility = View.GONE
+            btnInfo.visibility = View.GONE
+        }
+
+        btnInfo.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.rivm.nl/coronavirus-covid-19/vragen-antwoorden"))
+            startActivity(browserIntent)
         }
     }
 }

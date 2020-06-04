@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/tvQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="284dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="64dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:text="@string/tvFirstQuestion"
@@ -25,8 +25,8 @@
 
     <TextView
         android:id="@+id/tvAdvise"
-        android:layout_width="358dp"
-        android:layout_height="272dp"
+        android:layout_width="356dp"
+        android:layout_height="189dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:text="@string/advise"
@@ -37,6 +37,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnJa" />
+
 
     <Button
         android:id="@+id/btnJa"
@@ -51,19 +52,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
 
     <Button
-        android:id="@+id/btnReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="@string/restart"
-        android:textColor="@color/design_default_color_surface"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAdvise" />
-
-    <Button
         android:id="@+id/btnNee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,5 +62,31 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnJa"
         app:layout_constraintTop_toBottomOf="@+id/tvQuestion" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="@string/restart"
+        android:textColor="@color/design_default_color_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnInfo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdvise" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="@string/info"
+        android:textColor="@color/design_default_color_surface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnReset"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdvise" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
