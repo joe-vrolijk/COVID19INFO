@@ -40,7 +40,8 @@ class FeedRvAdapter(private val newsItems: List<NewsItem>) : RecyclerView.Adapte
         }
 
         fun bind(newsItem: NewsItem){
-            Glide.with(context).load(newsItem.image.thumbnail.contentUrl).into(itemView.feedrv_img)
+            Glide.with(context).load(newsItem.image?.thumbnail?.contentUrl)
+                .into(itemView.feedrv_img)
             itemView.feedrv_title.text = newsItem.title
             itemView.feedrv_pubdate.text = newsItem.pubDate.toString()
             itemView.feedrv_content.text = newsItem.content + "....."

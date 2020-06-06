@@ -49,7 +49,7 @@ class FeedFragment : Fragment() {
     private fun initViews(){
         feed_rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
         feed_rv.adapter = feedRvAdapter
-        feedRvAdapter.setOnItemClickListener { item -> openCustomTab(item.url)  }
+        feedRvAdapter.setOnItemClickListener { item -> openCustomTab(item.url!!) }
     }
 
     private fun initViewModel(){

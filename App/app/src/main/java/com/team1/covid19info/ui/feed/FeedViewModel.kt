@@ -1,105 +1,96 @@
 package com.team1.covid19info.ui.feed
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
-import com.team1.covid19info.data.FirebaseDao
 import com.team1.covid19info.data.NewsFeedRepository
 import com.team1.covid19info.model.NewsItem
 import com.team1.covid19info.ui.ViewModelBase
-import kotlinx.coroutines.withContext
-import java.sql.Timestamp
 import java.time.Instant
 import java.time.temporal.ChronoUnit
-import java.util.*
+
 
 class FeedViewModel(context: Context) : ViewModelBase(context) {
 
     private val newsRepository = NewsFeedRepository()
-    val database = FirebaseDatabase.getInstance()
-    val newsItemsCollection = database.getReference("newsItems")
-    val lastUpdatedCollection = database.getReference("lastUpdated")
+    private val newsCollection: MutableList<NewsItem> = mutableListOf()
+    private var database: DatabaseReference? = null
+    private var lastUpdatedReference: DatabaseReference? = null
+    private var newsItemsReference: DatabaseReference? = null
 
     private lateinit var instantReference: DatabaseReference
     private var instantListener: ValueEventListener? = null
-    private var lastUpdated: Instant? = null
+    private var lastUpdated: Long? = null
 
     val newsItems = MutableLiveData<List<NewsItem>>()
 
+    init {
+        database = FirebaseDatabase.getInstance().reference
+        lastUpdatedReference = FirebaseDatabase.getInstance().getReference("lastUpdated")
+        newsItemsReference = FirebaseDatabase.getInstance().getReference("newsItems")
+    }
+
+
     fun getCovidNews(){
         getLastUpdateTime()
-        if (lastUpdated!!.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))){
+        insertInstant()
+
+        val instant = Instant.ofEpochSecond(lastUpdated!!)
+        if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
             refreshNewsItems()
+            Log.i("************", "INSTANT: " + instant.toString())
         } else {
             getDbNewsItems()
+            Log.i("************", "KISS MY ASS!!!")
         }
     }
-
 
     fun insertInstant() {
-        lastUpdatedCollection.removeValue()
-        val firstDateTime = Instant.now()
-        lastUpdatedCollection.setValue(firstDateTime)
+        lastUpdatedReference!!.removeValue()
+        val firstDateTime = ServerValue.TIMESTAMP
+        lastUpdatedReference!!.child("instant").setValue(firstDateTime)
     }
 
-
     fun getLastUpdateTime(){
-
-        val ref = lastUpdatedCollection
-        val instantRef = ref.child("lastUpdated")
-        val valueEventListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val instantVal = dataSnapshot.child("lastUpdated").getValue(Instant::class.java)
-                val instantChild = dataSnapshot.child("nano").getValue(Long::class.java)
+        lastUpdatedReference!!.child("instant")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
+                    Log.i("Did not work", "Retrieving LastUpdate")
             }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.d(TAG, databaseError.getMessage()) //Don't ignore errors!
+                override fun onDataChange(p0: DataSnapshot) {
+                    val tmp = p0.getValue(Long::class.java)
+                    Log.i(" ********  LUI: ", tmp.toString())
+                    lastUpdated = tmp
             }
-        }
+            })
 
-        instantRef.addListenerForSingleValueEvent(valueEventListener);
-
-
-
-//
-//        val instantListenerObject = object : ValueEventListener {
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                val instant = dataSnapshot.getValue<Instant>()
-//                lastUpdated = instant
-//            }
-//
-//            override fun onCancelled(databaseError: DatabaseError) {
-//                // Getting Post failed, log a message
-//                Log.w(TAG, "JoeRene", databaseError.toException())
-//            }
-//        }
-//        instantReference.addValueEventListener(instantListenerObject)
-//        this.instantListener = instantListenerObject
     }
 
     fun getDbNewsItems(){
-        newsItemsCollection.child("newsItems")
+        newsItemsReference!!.child("newsItems")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
+                    Log.i("NEWSS", "$$$$$$$$$$$$$$$$$$$ NO WORKY")
                 }
 
                 override fun onDataChange(p0: DataSnapshot) {
-                    newsItems.postValue(p0.value as List<NewsItem>)
+                    Log.i("NEWSS", "$$$$$$$$$$$$$$$$$$$ ::: " + p0.childrenCount)
+                    p0.children.mapNotNullTo(newsCollection) {
+                        it.getValue<NewsItem>(NewsItem::class.java)
+                    }
+                    newsItems.postValue(newsCollection)
                 }
             })
     }
 
 
     fun refreshNewsItems() {
-        newsItemsCollection.removeValue()
+        newsItemsReference!!.removeValue()
         calls.addLast {
             val response = newsRepository.getCovidNews()
-            newsItemsCollection.setValue(response).addOnSuccessListener {
+            newsItemsReference!!.setValue(response).addOnSuccessListener {
                 Log.i("Update Success", "Updating NewsItems was successful")
                 insertInstant()
             }
