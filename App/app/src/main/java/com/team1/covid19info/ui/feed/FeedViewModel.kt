@@ -33,17 +33,18 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
 
 
     fun getCovidNews(){
-        getLastUpdateTime()
         insertInstant()
+        getLastUpdateTime()
 
-        val instant = Instant.ofEpochSecond(lastUpdated!!)
-        if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
-            refreshNewsItems()
-            Log.i("************", "INSTANT: " + instant.toString())
-        } else {
+
+//        val instant = Instant.ofEpochSecond(lastUpdated!!)
+//        if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
+//            refreshNewsItems()
+//            Log.i("************", "INSTANT: " + instant.toString())
+//        } else {
             getDbNewsItems()
-            Log.i("************", "KISS MY ASS!!!")
-        }
+//            Log.i("************", "KISS MY ASS!!!")
+//        }
     }
 
     fun insertInstant() {
