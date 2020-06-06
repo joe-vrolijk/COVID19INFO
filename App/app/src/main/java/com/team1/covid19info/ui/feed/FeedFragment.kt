@@ -56,10 +56,11 @@ class FeedFragment : Fragment() {
         viewModel = FeedViewModel(requireContext())
         viewModel.newsItems.observe(viewLifecycleOwner, Observer {
             newsItems.clear()
+            viewModel.getCovidNews()
             newsItems.addAll(it)
             feedRvAdapter.notifyDataSetChanged()
         })
-        viewModel.getCovidNews()
+
     }
 
 

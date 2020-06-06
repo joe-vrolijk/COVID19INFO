@@ -7,6 +7,7 @@ import com.google.firebase.database.*
 import com.team1.covid19info.data.NewsFeedRepository
 import com.team1.covid19info.model.NewsItem
 import com.team1.covid19info.ui.ViewModelBase
+import kotlinx.coroutines.delay
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 
@@ -21,7 +22,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
 
     private lateinit var instantReference: DatabaseReference
     private var instantListener: ValueEventListener? = null
-    private var lastUpdated: Long? = null
+    private var lastUpdated: Long = 0
 
     val newsItems = MutableLiveData<List<NewsItem>>()
 
@@ -33,24 +34,21 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
 
 
     fun getCovidNews(){
-        insertInstant()
         getLastUpdateTime()
-
-
-//        val instant = Instant.ofEpochSecond(lastUpdated!!)
-//        if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
-//            refreshNewsItems()
-//            Log.i("************", "INSTANT: " + instant.toString())
-//        } else {
+        val instant = Instant.ofEpochSecond(lastUpdated)
+        if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
+            refreshNewsItems()
+            Log.i("************", "INSTANT: " + instant.toString())
+        } else {
             getDbNewsItems()
-//            Log.i("************", "KISS MY ASS!!!")
-//        }
+            Log.i("************", "KISS MY ASS!!!")
+        }
     }
 
     fun insertInstant() {
         lastUpdatedReference!!.removeValue()
         val firstDateTime = ServerValue.TIMESTAMP
-        lastUpdatedReference!!.child("instant").setValue(firstDateTime)
+        lastUpdatedReference!!.child("instant").child("instant").setValue(firstDateTime)
     }
 
     fun getLastUpdateTime(){
@@ -61,9 +59,9 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
             }
 
                 override fun onDataChange(p0: DataSnapshot) {
-                    val tmp = p0.getValue(Long::class.java)
+                    val tmp = p0.child("instant")
+                    lastUpdated = tmp.getValue(Long::class.java)!!
                     Log.i(" ********  LUI: ", tmp.toString())
-                    lastUpdated = tmp
             }
             })
 
