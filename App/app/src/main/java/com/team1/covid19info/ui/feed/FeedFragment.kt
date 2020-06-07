@@ -4,21 +4,25 @@ package com.team1.covid19info.ui.feed
 import android.app.PendingIntent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.team1.covid19info.R
+import com.team1.covid19info.data.FirebaseDao
 import com.team1.covid19info.model.NewsItem
 import kotlinx.android.synthetic.main.fragment_feed.*
+import java.util.*
+
 
 class FeedFragment : Fragment() {
 
@@ -44,12 +48,13 @@ class FeedFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         initViews()
         initViewModel()
+        updateNews()
     }
 
     private fun initViews(){
         feed_rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
         feed_rv.adapter = feedRvAdapter
-        feedRvAdapter.setOnItemClickListener { item -> openCustomTab(item.url)  }
+        feedRvAdapter.setOnItemClickListener { item -> openCustomTab(item.url!!) }
     }
 
     private fun initViewModel(){
@@ -59,8 +64,19 @@ class FeedFragment : Fragment() {
             newsItems.addAll(it)
             feedRvAdapter.notifyDataSetChanged()
         })
-        viewModel.getCovidNews()
+        viewModel.getDbNewsItems()
     }
+
+    private fun updateNews(){
+        val timer = java.util.Timer()
+        val task = object: TimerTask(){
+            override fun run() {
+                viewModel.getCovidNews()
+            }
+        }
+        timer.scheduleAtFixedRate(task, 60000, 1000)
+    }
+
 
     private fun openCustomTab(url: String){
         val builder = CustomTabsIntent.Builder()
