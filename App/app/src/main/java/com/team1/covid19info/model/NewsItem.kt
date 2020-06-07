@@ -1,32 +1,64 @@
 package com.team1.covid19info.model
 
-import android.os.Parcelable
+import com.google.firebase.database.IgnoreExtraProperties
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 import java.util.*
 
-@Parcelize
-data class NewsItem(
+@IgnoreExtraProperties
+class NewsItem {
     @SerializedName("name")
-    val title: String,
+    var title: String? = null
     @SerializedName("url")
-    val url: String,
+    var url: String? = null
     @SerializedName("image")
-    val image: Image,
+    var image: Image? = null
     @SerializedName("description")
-    val content: String,
+    var content: String? = null
     @SerializedName("provider.0.name")
-    val provider: String,
+    var provider: String? = null
     @SerializedName("datePublished")
-    val pubDate: Date
-    ): Parcelable
+    var pubDate: Date? = null
 
-@Parcelize
-data class Image(
-    @SerializedName("thumbnail") var thumbnail: Thumbnail
-): Parcelable
+    constructor() {}
 
-@Parcelize
-data class Thumbnail(
-    @SerializedName("contentUrl") var contentUrl: String
-): Parcelable
+    constructor(
+        title: String?,
+        url: String?,
+        image: Image?,
+        content: String?,
+        provider: String?,
+        pubDate: Date?
+    ) {
+        this.title = title
+        this.url = url
+        this.image = image
+        this.content = content
+        this.provider = provider
+        this.pubDate = pubDate
+    }
+
+}
+
+class Image {
+    @SerializedName("thumbnail")
+    var thumbnail: Thumbnail? = null
+
+    constructor() {}
+
+    constructor(thumbnail: Thumbnail?) {
+        this.thumbnail = thumbnail
+    }
+}
+
+class Thumbnail {
+    @SerializedName("contentUrl")
+    var contentUrl: String? = null
+
+    constructor() {}
+
+    constructor(contentUrl: String?) {
+        this.contentUrl = contentUrl
+    }
+}
+
+
