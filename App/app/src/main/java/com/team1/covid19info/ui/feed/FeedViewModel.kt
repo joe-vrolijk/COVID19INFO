@@ -60,7 +60,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
                 override fun onDataChange(p0: DataSnapshot) {
                     val tmp = p0.child("instant")
                     lastUpdated = tmp.getValue(Long::class.java)!!
-                    Log.i("** RETRIEVAL DATA SUCCESS **", tmp.toString())
+                    Log.i("** RETRIEVAL LAST UPDATED TIME SUCCESS **", tmp.toString())
             }
             })
 
@@ -74,11 +74,12 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
                 }
 
                 override fun onDataChange(p0: DataSnapshot) {
-                    Log.i("** NEWS UPDATE CALLED **", "DATA COUNT NEWS ITEMS: " + p0.childrenCount)
+                    Log.i("** NEWS DB UPDATE CALLED **", "DATA COUNT NEWS ITEMS: " + p0.childrenCount)
                     p0.children.mapNotNullTo(newsCollection) {
                         it.getValue<NewsItem>(NewsItem::class.java)
                     }
                     newsItems.postValue(newsCollection)
+                    Log.i("** NEWS DB UPDATE COMPLETED  **", "DATA COUNT NEWS ITEMS: " + p0.childrenCount)
                 }
             })
     }
@@ -99,13 +100,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
 
 }
 
-
-//calls.addLast {
-//    val response = newsRepository.getCovidNews()
-//    newsItems.postValue(response.newsItems)
-//}
-
-
+// LOGIC:
 //get last datetime from fb
 // if last datetime < now - hour then call api
 // then: clear old newsitems, store newsItems to fb, and add to mutablelist and insert new datetime
