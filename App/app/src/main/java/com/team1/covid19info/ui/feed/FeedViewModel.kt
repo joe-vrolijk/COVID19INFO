@@ -60,7 +60,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
                 override fun onDataChange(p0: DataSnapshot) {
                     val tmp = p0.child("instant")
                     lastUpdated = tmp.getValue(Long::class.java)!!
-                    Log.i("** RETRIEVAL LAST UPDATED TIME SUCCESS **", tmp.toString())
+                    Log.i("** RETRIEVAL LAST UPDATED TIME SUCCESS **", Instant.ofEpochMilli(lastUpdated).toString())
             }
             })
 
