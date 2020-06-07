@@ -4,9 +4,13 @@ package com.team1.covid19info.ui.feed
 import android.app.PendingIntent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -17,13 +21,13 @@ import com.team1.covid19info.R
 import com.team1.covid19info.data.FirebaseDao
 import com.team1.covid19info.model.NewsItem
 import kotlinx.android.synthetic.main.fragment_feed.*
+import java.util.*
 
 
 class FeedFragment : Fragment() {
 
     private val newsItems = arrayListOf<NewsItem>()
     private val feedRvAdapter = FeedRvAdapter(newsItems)
-    private val firebaseDao = FirebaseDao()
 
     companion object {
         fun newInstance() = FeedFragment()
@@ -44,6 +48,7 @@ class FeedFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         initViews()
         initViewModel()
+        updateNews()
     }
 
     private fun initViews(){
@@ -56,11 +61,20 @@ class FeedFragment : Fragment() {
         viewModel = FeedViewModel(requireContext())
         viewModel.newsItems.observe(viewLifecycleOwner, Observer {
             newsItems.clear()
-            viewModel.getCovidNews()
             newsItems.addAll(it)
             feedRvAdapter.notifyDataSetChanged()
         })
+        viewModel.getDbNewsItems()
+    }
 
+    private fun updateNews(){
+        val timer = java.util.Timer()
+        val task = object: TimerTask(){
+            override fun run() {
+                viewModel.getCovidNews()
+            }
+        }
+        timer.scheduleAtFixedRate(task, 60000, 1000)
     }
 
 

@@ -38,10 +38,9 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         val instant = Instant.ofEpochSecond(lastUpdated)
         if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
             refreshNewsItems()
-            Log.i("************", "INSTANT: " + instant.toString())
+            Log.i("** DATA REFRESH CALLED **", "INSTANT: " + instant.toString())
         } else {
-            getDbNewsItems()
-            Log.i("************", "KISS MY ASS!!!")
+            Log.i("** DATA REFRESH NOT CALLED **", "DATA IS NOT OLDER THAN 1 HOUR")
         }
     }
 
@@ -55,13 +54,13 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         lastUpdatedReference!!.child("instant")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
-                    Log.i("Did not work", "Retrieving LastUpdate")
+                    Log.i("** ISSUE RETRIEVING LAST UPDATE TIME **","PLEASE INVESTIGATE")
             }
 
                 override fun onDataChange(p0: DataSnapshot) {
                     val tmp = p0.child("instant")
                     lastUpdated = tmp.getValue(Long::class.java)!!
-                    Log.i(" ********  LUI: ", tmp.toString())
+                    Log.i("** RETRIEVAL LAST UPDATED TIME SUCCESS **", Instant.ofEpochMilli(lastUpdated).toString())
             }
             })
 
@@ -71,15 +70,16 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         newsItemsReference!!.child("newsItems")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onCancelled(p0: DatabaseError) {
-                    Log.i("NEWSS", "$$$$$$$$$$$$$$$$$$$ NO WORKY")
+                    Log.i("** NEWS UPDATE FAILED **", "PLEASE INVESTIGATE")
                 }
 
                 override fun onDataChange(p0: DataSnapshot) {
-                    Log.i("NEWSS", "$$$$$$$$$$$$$$$$$$$ ::: " + p0.childrenCount)
+                    Log.i("** NEWS DB UPDATE CALLED **", "DATA COUNT NEWS ITEMS: " + p0.childrenCount)
                     p0.children.mapNotNullTo(newsCollection) {
                         it.getValue<NewsItem>(NewsItem::class.java)
                     }
                     newsItems.postValue(newsCollection)
+                    Log.i("** NEWS DB UPDATE COMPLETED  **", "DATA COUNT NEWS ITEMS: " + p0.childrenCount)
                 }
             })
     }
@@ -90,8 +90,9 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         calls.addLast {
             val response = newsRepository.getCovidNews()
             newsItemsReference!!.setValue(response).addOnSuccessListener {
-                Log.i("Update Success", "Updating NewsItems was successful")
+                Log.i("** API CALL SUCCESS **", "Updating NewsItems was successful")
                 insertInstant()
+                Log.i("** INSERT LASTUPDATE TIME SUCCESS **", "UPDATED TIME IN DB")
             }
             newsItems.postValue(response.newsItems)
         }
@@ -99,13 +100,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
 
 }
 
-
-//calls.addLast {
-//    val response = newsRepository.getCovidNews()
-//    newsItems.postValue(response.newsItems)
-//}
-
-
+// LOGIC:
 //get last datetime from fb
 // if last datetime < now - hour then call api
 // then: clear old newsitems, store newsItems to fb, and add to mutablelist and insert new datetime
