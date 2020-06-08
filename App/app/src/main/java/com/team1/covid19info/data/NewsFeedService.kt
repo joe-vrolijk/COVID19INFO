@@ -7,7 +7,7 @@ import retrofit2.http.Headers
 interface NewsFeedService {
     @Headers(
         "x-rapidapi-host: microsoft-azure-bing-news-search-v1.p.rapidapi.com",
-        "x-rapidapi-key: 80e88367a2msh89082bc3dac9b8dp1d8c0ejsn685efbc2fe0e"
+        "x-rapidapi-key: 6dfe5bd618msh63478dc414a7347p1eef4fjsn30e381014e74"
     )
     @GET("/search?count=20&mkt=nl-NL&q=corona")
     suspend fun getCovidNews(): NewsFeedApiResponse

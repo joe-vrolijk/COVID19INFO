@@ -48,6 +48,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         lastUpdatedReference!!.removeValue()
         val firstDateTime = ServerValue.TIMESTAMP
         lastUpdatedReference!!.child("instant").child("instant").setValue(firstDateTime)
+        Log.i("** LAST UPDATED TIME INSERTED SUCCESS **", "--")
     }
 
     fun getLastUpdateTime(){

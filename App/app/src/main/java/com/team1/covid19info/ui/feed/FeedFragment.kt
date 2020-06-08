@@ -74,7 +74,8 @@ class FeedFragment : Fragment() {
                 viewModel.getCovidNews()
             }
         }
-        timer.scheduleAtFixedRate(task, 60000, 1000)
+        timer.scheduleAtFixedRate(task, 30000, 5000)
+//        timer.scheduleAtFixedRate(task, 3600000, 5000)
     }
 
 
