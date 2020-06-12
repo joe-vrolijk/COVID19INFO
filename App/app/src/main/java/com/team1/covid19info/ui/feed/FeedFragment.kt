@@ -4,22 +4,22 @@ package com.team1.covid19info.ui.feed
 import android.app.PendingIntent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuBuilder
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.team1.covid19info.R
-import com.team1.covid19info.data.FirebaseDao
 import com.team1.covid19info.model.NewsItem
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_feed.*
 import java.util.*
 
@@ -28,6 +28,8 @@ class FeedFragment : Fragment() {
 
     private val newsItems = arrayListOf<NewsItem>()
     private val feedRvAdapter = FeedRvAdapter(newsItems)
+    private val timer = Timer()
+    private val updatePeriod = 3600000L // in ms
 
     companion object {
         fun newInstance() = FeedFragment()
@@ -41,6 +43,7 @@ class FeedFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
 
@@ -59,23 +62,25 @@ class FeedFragment : Fragment() {
 
     private fun initViewModel(){
         viewModel = FeedViewModel(requireContext())
+        viewModel.getDbNewsItems()
         viewModel.newsItems.observe(viewLifecycleOwner, Observer {
             newsItems.clear()
             newsItems.addAll(it)
             feedRvAdapter.notifyDataSetChanged()
         })
-        viewModel.getDbNewsItems()
     }
 
     private fun updateNews(){
-        val timer = java.util.Timer()
+        Log.i("*** UPDATE PERIOD ***", String.format("Time in mins: %d", updatePeriod / 60000))
         val task = object: TimerTask(){
             override fun run() {
-                viewModel.getCovidNews()
+                viewModel.refreshNewsItems()
+                viewModel.getDbNewsItems()
+                Toast.makeText(context, "Updated NewsItems", Toast.LENGTH_SHORT).show()
             }
         }
-        timer.scheduleAtFixedRate(task, 30000, 5000)
-//        timer.scheduleAtFixedRate(task, 3600000, 5000)
+        // run every 60 min = 3600000 by default. Change updatePeriod for interval changes in ms
+        timer.scheduleAtFixedRate(task, updatePeriod, 5000)
     }
 
 
@@ -100,5 +105,40 @@ class FeedFragment : Fragment() {
         customTabsIntent.launchUrl(this.requireContext(), Uri.parse(url))
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.feed_menu, menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_refresh -> viewModel.refreshNewsItems()
+            else -> {
+            }
+        }
+        return true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
+        (activity as AppCompatActivity).tbToolbar.menu.clear()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateNews()
+        (activity as AppCompatActivity).tbToolbar.inflateMenu(R.menu.feed_menu)
+        (activity as AppCompatActivity).tbToolbar.setOnMenuItemClickListener{
+            when (it.itemId) {
+                R.id.action_refresh -> {
+                    viewModel.refreshNewsItems()
+                    viewModel.getDbNewsItems()
+                }
+                else -> {
+                }
+            }
+            true
+        }
+    }
 }
