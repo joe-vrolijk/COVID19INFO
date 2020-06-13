@@ -17,6 +17,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.team1.covid19info.R
 import com.team1.covid19info.model.NewsItem
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,6 +45,7 @@ class FeedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
+
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
 
@@ -52,6 +54,18 @@ class FeedFragment : Fragment() {
         initViews()
         initViewModel()
         updateNews()
+
+        itemsswipetorefresh.setOnRefreshListener {
+            viewModel.refreshNewsItems()
+            viewModel.getDbNewsItems()
+            viewModel.newsItems.observe(viewLifecycleOwner, Observer {
+                newsItems.clear()
+                newsItems.addAll(it)
+                feedRvAdapter.notifyDataSetChanged()
+            })
+            itemsswipetorefresh.isRefreshing = false
+        }
+
     }
 
     private fun initViews(){
