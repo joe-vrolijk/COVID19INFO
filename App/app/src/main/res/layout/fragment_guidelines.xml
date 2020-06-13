@@ -2,11 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/backgr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    tools:context=".ui.guidelines.GuidelinesFragment" >
+    android:background="#ffffff"
+    tools:context=".ui.guidelines.GuidelinesFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,13 +18,13 @@
             android:orientation="vertical">
 
             <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitCenter"
-            android:src="@drawable/guidelines1"
-            app:srcCompat="@drawable/guidelines1"
-            tools:srcCompat="@drawable/guidelines1" />
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/guidelines1"
+                app:srcCompat="@drawable/guidelines1"
+                tools:srcCompat="@drawable/guidelines1" />
 
             <ImageView
                 android:id="@+id/imageView10"
