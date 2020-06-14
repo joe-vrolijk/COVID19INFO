@@ -65,7 +65,6 @@ class FeedFragment : Fragment() {
             })
             itemsswipetorefresh.isRefreshing = false
         }
-
     }
 
     private fun initViews(){

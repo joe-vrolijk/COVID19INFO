@@ -261,12 +261,12 @@ class StatisticsFragment : Fragment(), OnMapReadyCallback {
             coHeatmap.visibility = View.VISIBLE
             coPiechart.visibility = View.GONE
             lcCountryData.visibility = View.GONE
-            tvNewConfirmed.text = viewModel.globalStatistics.value?.newConfirmed.toString()
-            tvTotalConfirmed.text = viewModel.globalStatistics.value?.totalConfirmed.toString()
-            tvNewDeaths.text = viewModel.globalStatistics.value?.newDeaths.toString()
-            tvTotalDeaths.text = viewModel.globalStatistics.value?.totalDeaths.toString()
-            tvNewRecovered.text = viewModel.globalStatistics.value?.newRecovered.toString()
-            tvTotalRecovered.text = viewModel.globalStatistics.value?.totalRecovered.toString()
+            tvNewConfirmed.text = if (viewModel.globalStatistics.value == null) 0.toString() else viewModel.globalStatistics.value?.newConfirmed.toString()
+            tvTotalConfirmed.text = if (viewModel.globalStatistics.value == null) 0.toString() else viewModel.globalStatistics.value?.totalConfirmed.toString()
+            tvNewDeaths.text = if ( viewModel.globalStatistics.value == null) 0.toString() else viewModel.globalStatistics.value?.newDeaths.toString()
+            tvTotalDeaths.text = if (viewModel.globalStatistics.value == null ) 0.toString() else viewModel.globalStatistics.value?.totalDeaths.toString()
+            tvNewRecovered.text = if (viewModel.globalStatistics.value == null) 0.toString() else viewModel.globalStatistics.value?.newRecovered.toString()
+            tvTotalRecovered.text = if (viewModel.globalStatistics.value == null) 0.toString() else viewModel.globalStatistics.value?.totalRecovered.toString()
         } else {
             coHeatmap.visibility = View.GONE
             coPiechart.visibility = View.VISIBLE
