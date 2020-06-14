@@ -57,9 +57,9 @@ class FeedFragment : Fragment() {
 
         itemsswipetorefresh.setOnRefreshListener {
             viewModel.refreshNewsItems()
-            viewModel.getDbNewsItems()
             viewModel.newsItems.observe(viewLifecycleOwner, Observer {
                 newsItems.clear()
+                viewModel.getDbNewsItems()
                 newsItems.addAll(it)
                 feedRvAdapter.notifyDataSetChanged()
             })
@@ -133,7 +133,6 @@ class FeedFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        timer.cancel()
         (activity as AppCompatActivity).tbToolbar.menu.clear()
 
     }
