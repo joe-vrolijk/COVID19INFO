@@ -11,13 +11,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adviceViewModel: AdviceViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initNavigation()
-        loadFireBaseData()
     }
 
     fun setToolbarTitle(title: String) {
@@ -32,10 +29,4 @@ class MainActivity : AppCompatActivity() {
             tbTitle.setTextColor(resources.getColor(R.color.colorTitle))
         }
     }
-
-    private fun loadFireBaseData(){
-        adviceViewModel= AdviceViewModel(this)
-        adviceViewModel.getQuestionsFromFireBase()
-    }
-
 }
