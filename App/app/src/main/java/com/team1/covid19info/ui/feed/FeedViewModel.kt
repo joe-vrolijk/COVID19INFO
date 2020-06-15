@@ -37,7 +37,7 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         getLastUpdateTime()
         val instant = Instant.ofEpochSecond(lastUpdated)
         if (instant.isBefore(Instant.now().minus(1, ChronoUnit.HOURS))) {
-            refreshNewsItems()
+            // refreshNewsItems()
             Log.i("** DATA REFRESH CALLED **", "INSTANT: " + instant.toString())
         } else {
             Log.i("** DATA REFRESH NOT CALLED **", "DATA IS NOT OLDER THAN 1 HOUR")

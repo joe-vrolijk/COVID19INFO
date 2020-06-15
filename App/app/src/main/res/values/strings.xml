@@ -13,8 +13,8 @@
     <string name="NewDeaths">Aantal nieuwe sterfgevallen</string>
     <string name="TotalConfirmed">Totaal aantal besmettingen</string>
     <string name="NewConfirmed">Aantal nieuwe besmettingen</string>
-    <string name="tvFirstQuestion">Heeft u koorts, 38 graden Celsius of hoger?</string>
-    <string name="advise">Ons Advies:\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies laoreet finibus. Nullam malesuada sed dolor ut vehicula. Donec dignissim ex sit amet tellus dictum, vitae ornare nulla congue. Etiam lacinia, mauris ac feugiat fringilla, erat augue molestie tellus, vitae sollicitudin mi nulla et magna. Ut vel felis ut magna gravida tincidunt hendrerit nec lorem. Cras justo purus, lobortis at.</string>
+    <string name="tvFirstQuestion">U hoeft niet naar de dokter\\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen lijkt er voor nu geen reden om de dokter te bellen voor vragen over het coronavirus.</string>
+    <string name="advise">Ons Advies:\\nDoe geen boodschappen en ontvang geen bezoek. Heeft u huisgenoten, dan mogen zij ook niet naar buiten. Als uitzondering hierop mogen alleen huisgenoten die geen klachten hebben even boodschappen doen. Als iedereen 24 uur geen klachten heeft, mag u weer naar buiten. Voor meer informatie klik op onderstaande button. Zorg dat u anderen niet besmet. Houd dus afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts als de klachten verergeren en u medische hulp nodig hebt: verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of benauwdheid.</string>
     <string name="ja">Ja</string>
     <string name="nee">Nee</string>
     <string name="restart">Opnieuw</string>

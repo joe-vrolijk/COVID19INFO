@@ -1,0 +1,677 @@
+{
+ 	"adviseQuestions": {
+		"questionList": [
+			{
+				"adviseQuestionId": 0,
+				"linkYesAnswerId": 1,
+				"linkNoAnswerId": 18,
+				"questionText": "Heeft u koorts, 38 graden Celsius of hoger?\nKoorts is een gemeten temperatuur boven de 38 graden Celsius, dus geen schatting.",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 1,
+				"linkYesAnswerId": 2,
+				"linkNoAnswerId": 3,
+				"questionText": "Bent u ouder dan 70 jaar, hebt een chronische ziekte of heeft u minder weerstand?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 2,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Bel de huisarts of huisartsenpost\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u direct contact op te nemen met een arts.",
+				"adviceText": "Ons advies\nOmdat u in een zogenoemde risicogroep valt en omdat u koorts heeft dient u de huisarts te bellen. Doe geen boodschappen en ontvang geen bezoek. Heeft u huisgenoten, dan mogen zij ook niet naar buiten. Als uitzondering hierop mogen alleen huisgenoten die geen klachten hebben even boodschappen doen. Als iedereen 24 uur geen klachten heeft, mag u weer naar buiten. Voor meer informatie klik op onderstaande button. Zorg dat u anderen niet besmet. Houd dus afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten."
+			},
+			{
+				"adviseQuestionId": 3,
+				"linkYesAnswerId": 4,
+				"linkNoAnswerId": 7,
+				"questionText": "Heeft u verkoudheidsklachten, zoals neusverkoudheid, loopneus, keelpijn, lichte hoest of verhoging tot 38 graden Celsius?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 4,
+				"linkYesAnswerId": 5,
+				"linkNoAnswerId": 6,
+				"questionText": "Bent u benauwd of ademt u steeds moeilijker (bijvoorbeeld bij het lopen)?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 5,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven en uit te zieken.",
+				"adviceText": "Ons advies\nDoe geen boodschappen en ontvang geen bezoek. Heeft u huisgenoten, dan mogen zij ook niet naar buiten. Als uitzondering hierop mogen alleen huisgenoten die geen klachten hebben even boodschappen doen. Als iedereen 24 uur geen klachten heeft, mag u weer naar buiten. Voor meer informatie klik op onderstaande button. Zorg dat u anderen niet besmet. Houd dus afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts als de klachten verergeren en u medische hulp nodig hebt: verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of benauwdheid."
+			},
+			{
+				"adviseQuestionId": 6,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven en uit te zieken.",
+				"adviceText": "Ons advies\nDoe geen boodschappen en ontvang geen bezoek. Heeft u huisgenoten, dan mogen zij ook niet naar buiten. Als uitzondering hierop mogen alleen huisgenoten die geen klachten hebben even boodschappen doen. Als iedereen 24 uur geen klachten heeft, mag u weer naar buiten. Voor meer informatie klik op onderstaande button. Zorg dat u anderen niet besmet. Houd dus afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts als de klachten verergeren en u medische hulp nodig hebt: verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of benauwdheid."
+			},
+			{
+				"adviseQuestionId": 7,
+				"linkYesAnswerId": 8,
+				"linkNoAnswerId": 9,
+				"questionText": "Bent u benauwd of ademt u steeds moeilijker (bijvoorbeeld bij het lopen)?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 8,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven en uit te zieken.",
+				"adviceText": "Ons advies\nDoe geen boodschappen en ontvang geen bezoek. Heeft u huisgenoten, dan mogen zij ook niet naar buiten. Als uitzondering hierop mogen alleen huisgenoten die geen klachten hebben even boodschappen doen. Als iedereen 24 uur geen klachten heeft, mag u weer naar buiten. Voor meer informatie klik op onderstaande button. Zorg dat u anderen niet besmet. Houd dus afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts als de klachten verergeren en u medische hulp nodig hebt: verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of benauwdheid."
+			},
+			{
+				"adviseQuestionId": 9,
+				"linkYesAnswerId": 10,
+				"linkNoAnswerId": 15,
+				"questionText": "Heeft u in de afgelopen twee weken contact gehad met een patiënt met het coronavirus?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 10,
+				"linkYesAnswerId": 11,
+				"linkNoAnswerId": 12,
+				"questionText": "Heeft uw huisgenoot het coronavirus?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 11,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot COVID-19 heeft mag u niet naar buiten. U kunt tot 14 dagen na het laatste contact met deze persoon nog ziek worden, daarom moet u thuis in quarantaine blijven. U kunt klachten krijgen zoals verkoudheid, hoesten en koorts. De informatie via onderstaande button is voor u van belang."
+			},
+			{
+				"adviseQuestionId": 12,
+				"linkYesAnswerId": 13,
+				"linkNoAnswerId": 14,
+				"questionText": "Heeft uw huisgenoot verkoudheidsklachten met koorts (38 graden Celcius of hoger), en/of benauwdheid?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 13,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot klachten heeft mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 14,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat u in de afgelopen twee contact heeft gehad met een patiënt met het coronavirus mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 15,
+				"linkYesAnswerId": 16,
+				"linkNoAnswerId": 17,
+				"questionText": "Heeft uw huisgenoot verkoudheidsklachten met koorts (38 graden Celcius of hoger), en/of benauwdheid?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 16,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot klachten heeft mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 17,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven en uit te zieken.",
+				"adviceText": "Ons advies\nZorg dat u anderen niet besmet. Houd afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts als de klachten verergeren en u medische hulp nodig hebt: verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of benauwdheid. Doe geen boodschappen en ontvang geen bezoek. Laat anderen boodschappen doen, of laat ze bezorgen, zorg dat een ander de hond uitlaat. Voor huisgenoten zonder klachten gelden de regels die voor iedereen in Nederland gelden. Als u 24 uur lang geen klachten hebt, mag u weer naar buiten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 18,
+				"linkYesAnswerId": 19,
+				"linkNoAnswerId": 30,
+				"questionText": "Heeft u verkoudheidsklachten, zoals neusverkoudheid, loopneus, keelpijn, lichte hoest of verhoging tot 38 graden Celsius?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 19,
+				"linkYesAnswerId": 20,
+				"linkNoAnswerId": 21,
+				"questionText": "Bent u benauwd of ademt u steeds moeilijker (bijvoorbeeld bij het lopen)?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 20,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Bel de huisarts of huisartsenpost\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u direct contact op te nemen met een arts.",
+				"adviceText": "Ons advies\nDe huisarts overlegt met de GGD of onderzoek naar het coronavirus nodig is, maar mogelijk heeft u andere klachten. Ga niet naar het spreekuur, maar blijf thuis! Om verspreiding te voorkomen wordt u gevraagd zoveel mogelijk thuis te blijven en 1,5 meter afstand te houden. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 21,
+				"linkYesAnswerId": 22,
+				"linkNoAnswerId": 27,
+				"questionText": "Heeft in de afgelopen twee weken contact gehad met een patiënt met het coronavirus?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 22,
+				"linkYesAnswerId": 23,
+				"linkNoAnswerId": 24,
+				"questionText": "Heeft uw huisgenoot het coronavirus?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 23,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot COVID-19 heeft mag u niet naar buiten. U kunt tot 14 dagen na het laatste contact met deze persoon nog ziek worden, daarom moet u thuis in quarantaine blijven. U kunt klachten krijgen zoals verkoudheid, hoesten en koorts. De informatie via onderstaande button is voor u van belang."
+			},
+			{
+				"adviseQuestionId": 24,
+				"linkYesAnswerId": 25,
+				"linkNoAnswerId": 26,
+				"questionText": "Heeft uw huisgenoot verkoudheidsklachten met koorts (38 graden Celcius of hoger), en/of benauwdheid?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 25,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot klachten heeft mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 26,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat u in de afgelopen twee contact heeft gehad met een patiënt met het coronavirus mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 27,
+				"linkYesAnswerId": 28,
+				"linkNoAnswerId": 29,
+				"questionText": "Heeft uw huisgenoot verkoudheidsklachten met koorts (38 graden Celcius of hoger), en/of benauwdheid?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 28,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot klachten heeft mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 29,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis, ziek uit\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven en uit te zieken.",
+				"adviceText": "Ons advies\nZorg dat u anderen niet besmet. Houd afstand tot andere mensen. Houdt de komende 14 dagen uw gezondheid in de gaten. Bel alleen met de huisarts als de klachten verergeren en u medische hulp nodig hebt: verkoudheidsklachten met koorts (38 graden Celsius of hoger) en/of benauwdheid. Doe geen boodschappen en ontvang geen bezoek. Laat anderen boodschappen doen, of laat ze bezorgen, zorg dat een ander de hond uitlaat. Voor huisgenoten zonder klachten gelden de regels die voor iedereen in Nederland gelden. Als u 24 uur lang geen klachten hebt, mag u weer naar buiten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 30,
+				"linkYesAnswerId": 31,
+				"linkNoAnswerId": 36,
+				"questionText": "Heeft in de afgelopen twee weken contact gehad met een patiënt met het coronavirus?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 31,
+				"linkYesAnswerId": 32,
+				"linkNoAnswerId": 33,
+				"questionText": "Heeft uw huisgenoot het coronavirus?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 32,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot COVID-19 heeft mag u niet naar buiten. U kunt tot 14 dagen na het laatste contact met deze persoon nog ziek worden, daarom moet u thuis in quarantaine blijven. U kunt klachten krijgen zoals verkoudheid, hoesten en koorts. De informatie via onderstaande button is voor u van belang."
+			},
+			{
+				"adviseQuestionId": 33,
+				"linkYesAnswerId": 34,
+				"linkNoAnswerId": 35,
+				"questionText": "Heeft uw huisgenoot verkoudheidsklachten met koorts (38 graden Celcius of hoger), en/of benauwdheid?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 34,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot klachten heeft mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 35,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat u in de afgelopen twee contact heeft gehad met een patiënt met het coronavirus mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 36,
+				"linkYesAnswerId": 37,
+				"linkNoAnswerId": 38,
+				"questionText": "Heeft uw huisgenoot verkoudheidsklachten met koorts (38 graden Celcius of hoger), en/of benauwdheid?",
+				"adviceText": null
+			},
+			{
+				"adviseQuestionId": 37,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "Blijf thuis\nOp basis van de door u ingevulde egevens en de RIVM richtlijnen adviseren wij u om thuis te blijven.",
+				"adviceText": "Ons advies\nOmdat uw huisgenoot klachten heeft mag u niet naar buiten. Als uitzondering hierop mag u of een huisgenoot, (iemand die geen klachten heeft), even boodschappen doen. U kunt weer naar buiten wanneer u en alle huisgenoten 24 uur geen klachten meer hebben. Dat betekent: geen koorts, geen neusverkoudheid en niet hoesten. Voor meer informatie klik op onderstaande button."
+			},
+			{
+				"adviseQuestionId": 38,
+				"linkYesAnswerId": null,
+				"linkNoAnswerId": null,
+				"questionText": "U hoeft niet naar de dokter\nOp basis van de door u ingevulde gegevens en de RIVM richtlijnen lijkt er voor nu geen reden om de dokter te bellen voor vragen over het coronavirus.",
+				"adviceText": "Ons advies\nOm verspreiding te voorkomen wordt u gevraagd zoveel mogelijk thuis te blijven. 1,5 meter afstand te houden. Alleen naar buiten te gaan als dat nodig is en ga niet op bezoek bij mensen van 70 jaar of ouder en mensen met een kwetsbare gezondheid. Voor meer informatie klik op onderstaande button."
+			}
+		]
+	},
+  "lastUpdated" : {
+    "instant" : {
+      "instant" : 1591555578000
+    }
+  },
+  "newsItems" : {
+    "newsItems" : [ {
+      "content" : "Het tijdelijk stilzetten van het bevolkingsonderzoek naar borstkanker vanwege de coronacrisis en de oplopende wachttijden, kost meer dan vijfhonderd vrouwen de komende jaren het leven. Dat stelt het A",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.A5EDBB12EA687C7A14B3EADA136CC094&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 23,
+        "minutes" : 43,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591566180000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Komende jaren ruim 500 extra borstkankerdoden door impact corona",
+      "url" : "https://www.ad.nl/binnenland/komende-jaren-ruim-500-extra-borstkankerdoden-door-impact-corona~ab69382c/"
+    }, {
+      "content" : "Erik van der Jagt en zijn vrouw worden overspoeld met kaarten Een shirt van zijn geliefde club Excelsior en maar liefst 350 kaarten. De 64-jarige Erik van der Jagt heeft ze afgelopen tijd gekregen als",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.4AC39B718F1FF4A3763AE2F7B7712503&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 18,
+        "minutes" : 51,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591548660000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Corona slaat hard toe bij fervent Excelsior-fan: Erik verliest ouders en kruipt zelf door oog van de naald",
+      "url" : "https://www.rijnmond.nl/nieuws/196146/Corona-slaat-hard-toe-bij-fervent-Excelsior-fan-Erik-verliest-ouders-en-kruipt-zelf-door-oog-van-de-naald"
+    }, {
+      "content" : "Om corona te bestrijden hoef je geen onvermoeibare zorgmedewerker te zijn. De 25-jarige Nick uit Waddinxveen heeft een verstandelijke beperking en een zware vorm van autisme. Toch houdt dat hem niet tegen. Hij haalt geld op voor het Corona Research Fonds ...",
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 23,
+        "minutes" : 37,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591565820000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Nick (25) haalt geld op voor het Corona Research Fonds met zelfgetekende uilen",
+      "url" : "https://www.hartvannederland.nl/nieuws/2020/nick-25-haalt-geld-op-voor-het-corona-research-fonds-met-zelfgetekende-uilen/"
+    }, {
+      "content" : "Als een op de vijf Nederlanders de nieuwe corona-app gebruikt, heeft die al impact op het verloop van het virus. Dat zegt Brenno de Winter zondag in Dit is de Dag. “Eerder dachten we dat de app alleen",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.17B1A6D17F5E0D337554E25A63CA05C1&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 21,
+        "minutes" : 14,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591557240000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Brenno de Winter: \"Corona-app overheid effectief bij 20% gebruik\"",
+      "url" : "https://www.nporadio1.nl/binnenland/24316-brenno-de-winter-corona-app-overheid-effectief-bij-20-gebruik"
+    }, {
+      "content" : "Voor de uitbraak van de pandemie was Van der Jagt kerngezond en zorgde hij samen met zijn broer voor zijn ouders. Alle vier kregen ze corona. Zijn ouders overleden, zijn broer is hersteld en zelf kroo",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.1A621F4C9D9DDD4A1146DE8C7DD70B49&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 18,
+        "minutes" : 40,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591548000000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Corona slaat hard toe bij fervent Excelsior-fan: Erik verliest ouders en kruipt zelf door het oog van de naald",
+      "url" : "https://www.rijnmond.nl/nieuws/196146/Corona-slaat-hard-toe-bij-fervent-Excelsior-fan-Erik-verliest-ouders-en-kruipt-zelf-door-het-oog-van-de-naald"
+    }, {
+      "content" : "“Mijn lieve vrienden!” De Roma-Hongaarse taxichauffeur József Radics stapt zijn auto uit. Het is acht uur ’s ochtends en op het parkeerterrein van het Nyugati-treinstation in Boedapest staat een groep",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.53D07928C5CA397184B5F17C05C7224F&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 21,
+        "minutes" : 10,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591557000000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Romafamilies in Hongarije hebben het tijdens corona extra zwaar",
+      "url" : "https://www.trouw.nl/buitenland/romafamilies-in-hongarije-hebben-het-tijdens-corona-extra-zwaar~b4c3126e/"
+    }, {
+      "content" : "Lange tijd werden ze weggezet als wereldvreemd, maar door corona lijkt het ineens veel minder gek om je op het ondenkbare voor te bereiden. Welkom in de wereld van de preppers.",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.BF1C9483160B2F54B194C835340087C8&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 20,
+        "minutes" : 5,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591553100000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "‘Door corona beseffen meer mensen dat preppen niet alleen voor ‘gekkies’ is",
+      "url" : "https://www.ad.nl/nlblijftthuis/door-corona-beseffen-meer-mensen-dat-preppen-niet-alleen-voor-gekkies-is~af5e49c3/"
+    }, {
+      "content" : "Heb jij toevallig al gezocht naar een corona-app in de Play Store? Als je nu op ‘corona’ zoekt, verschijnen er maar vier resultaten. Wij vertellen je welke apps dit zijn en wat ze doen. Corona-apps in",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.C2FD7C45A77635512D889349546B10A5&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 18,
+        "minutes" : 4,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591545840000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Dit zijn de vier apps in de Play Store als je zoekt op 'corona'",
+      "url" : "https://www.androidplanet.nl/apps/corona-apps-play-store/"
+    }, {
+      "content" : "“De mensen helpen elkaar onderling en steunen elkaar. Maar de angst is nog heel erg.” Diaken Henk van Thiel van de Sint-Agathakerk in Boekel leeft sinds het begin van de coronacrisis in een onwerkelij",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.D9A8C0D54001E994C97D38366BD728F3&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 22,
+        "minutes" : 8,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591560480000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Angst voor corona nog steeds groot in zwaar getroffen Boekel",
+      "url" : "https://www.omroepbrabant.nl/nieuws/3213119/angst-voor-corona-nog-steeds-groot-in-zwaar-getroffen-boekel"
+    }, {
+      "content" : "In Suriname is enige ophef ontstaan over een post die de bekende Surinaamse comedian en acteur Ruben Welles donderdag op Facebook plaatste over het coronavirus en de lockdown in Suriname. Uit zijn woo",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.95A9B25184D3FF79B5D83EC325E31159&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 21,
+        "minutes" : 43,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591558980000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Kritiek op corona Facebook bericht van comedian Welles",
+      "url" : "https://www.waterkant.net/suriname/2020/06/07/kritiek-op-corona-facebook-bericht-van-comedian-welles/"
+    }, {
+      "content" : "Maandag zal er bij basisschool De Springbok uit de Haagse wijk Transvaal onderwijs op afstand plaatsvinden, meldt een woordvoerder. De basisschool sloot vorige week woensdag de deuren nadat twee leerk",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.D17454F71FAD9119EB404D65E76309BB&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 19,
+        "minutes" : 25,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591550700000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Coronavirus: basisschool De Springbok ook maandag dicht vanwege corona bij leraren",
+      "url" : "https://www.omroepwest.nl/nieuws/4056248/Coronavirus-basisschool-De-Springbok-ook-maandag-dicht-vanwege-corona-bij-leraren"
+    }, {
+      "content" : "Veel evenementen die gepland waren voor de zomer gaan door het coronavirus niet door, dat weten we intussen. Maar het maisdoolhof in Putte, dat komt er wel. De planten schieten intussen al lekker omho",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.51EDC910B10811BE5EEB37C16EBD0D0C&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 23,
+        "minutes" : 25,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591565100000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Putte krijgt ondanks corona toch weer maisdoolhof",
+      "url" : "https://rtv.be/artikels/putte-krijgt-ondanks-corona-toch-weer-maisdoolhof-a83680"
+    }, {
+      "content" : "MADRID (ANP) - De crowdfundingactie van toptennisser Rafael Nadal en de beroemde basketballer Paul Gasol heeft al meer dan 14 miljoen euro opgebracht. Het geld gaat naar slachtoffers van het coronavir",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.AA48550E0219603E91D5DCBDED0A01EC&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 22,
+        "minutes" : 53,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591563180000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Nadal en Gasol halen 14 miljoen euro op voor slachtoffers corona",
+      "url" : "https://www.welingelichtekringen.nl/anp/nadal-en-gasol-halen-14-miljoen-euro-op-voor-slachtoffers-corona"
+    }, {
+      "content" : "De 21-jarige Zoetermeerse Samuel Hoepel heeft in korte tijd zijn moeder verloren aan corona en moet ook nog eens zijn huis uit. Het huis waar ze samen woonachtig waren. Ook staan de schoolexamens voor",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.DBC5EB1AE24D055256025388EDF1A95E&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 16,
+        "minutes" : 28,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591540080000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Zoetermeerse Samuel (21) verliest moeder aan corona en wordt huurwoning uitgezet",
+      "url" : "https://www.hartvannederland.nl/nieuws/2020/samuel-moeder-corona-huis/"
+    }, {
+      "content" : "Morgen wordt het MH17-proces hervat. Volgens de Nederlandse advocaten van één van de Russische verdachten heeft de verdediging vertraging opgelopen door de corona-beperkingen. Advocaat Boudewijn van E",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.8FE826DA708CA71B354FE7B540491F39&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 18,
+        "minutes" : 40,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591548000000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Verdediging MH17-proces: 'De corona-beperkingen leiden tot veel vertraging'",
+      "url" : "https://nos.nl/l/2336504"
+    }, {
+      "content" : "Het bevolkingsonderzoek waarbij vrouwen vanaf hun vijftigste worden opgeroepen om hun borsten te laten controleren op kanker werd 16 maart stopgezet. Volgende week wordt de screening weer gedeeltelijk",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.6D97DB6F9CF9D6EE33781A857D442EF5&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 20,
+        "minutes" : 22,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591554120000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "‘Komende jaren ruim 500 extra borstkankersterfgevallen door impact corona’",
+      "url" : "https://www.parool.nl/nederland/komende-jaren-ruim-500-extra-borstkankersterfgevallen-door-impact-corona~bb69382c/"
+    }, {
+      "content" : "Nederland liet zich altijd al het beste samenvatten met het beeld van Ingrid die vanachter haar geraniums de wereld de maat neemt, terwijl Henk in zijn tegeltuintje de voetbal van de buurjongen lek st",
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 22,
+        "minutes" : 15,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591560900000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Onsmakelijk hoe fatsoenlijke mensen corona-angst omzetten in een morele overtoep",
+      "url" : "https://www.volkskrant.nl/columns-opinie/onsmakelijk-hoe-fatsoenlijke-mensen-corona-angst-omzetten-in-een-morele-overtoep~b735b35d/"
+    }, {
+      "content" : "Maandag stonden duizenden mensen op de Dam. Woensdag verzamelden duizenden zich in Rotterdam. Door hun mondkapjes heen uitten zij hun ongenoegen over het buitensporige politie­geweld tegen zwarte lich",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.76E6FE62D85D45BB9455755C7FC208FA&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 6,
+        "day" : 6,
+        "hours" : 16,
+        "minutes" : 0,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591452000000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "‘Waarom gaat het vooral over corona? Tegen racisme komt geen vaccin’",
+      "url" : "https://www.parool.nl/columns-opinie/waarom-gaat-het-vooral-over-corona-tegen-racisme-komt-geen-vaccin~b7d69ada3/"
+    }, {
+      "content" : "Lees hier het liveblog van zaterdag 6 juni terug. Op de hoogte blijven? Ontvang pushmeldingen via onze app, abonneer je op onze nieuwsbrieven, en lees alles over het virus in dit dossier. Alles over h",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.4A37807478D81900E6E4B0768321B63E&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 14,
+        "minutes" : 55,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591534500000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Live: 239 nieuwe besmettingen geregistreerd, hoogste aantal sinds twee weken | Britse corona-adviseur: we hadden eerder in lockdown moeten gaan",
+      "url" : "https://www.volkskrant.nl/nieuws-achtergrond/live-239-nieuwe-besmettingen-geregistreerd-hoogste-aantal-sinds-twee-weken-britse-corona-adviseur-we-hadden-eerder-in-lockdown-moeten-gaan~bc891fc5/"
+    }, {
+      "content" : "Negen op de tien touringcarbedrijven in Nederland gaan bewust de corona-richtlijnen overtreden. Dat meldt Hart van Nederland. Door de coronamaatregelen mogen touringcars nu afhankelijk van het type bu",
+      "image" : {
+        "thumbnail" : {
+          "contentUrl" : "https://www.bing.com/th?id=ON.6128EB1A6121BF115CB7584617A311D5&pid=News"
+        }
+      },
+      "pubDate" : {
+        "date" : 7,
+        "day" : 0,
+        "hours" : 14,
+        "minutes" : 22,
+        "month" : 5,
+        "seconds" : 0,
+        "time" : 1591532520000,
+        "timezoneOffset" : -120,
+        "year" : 120
+      },
+      "title" : "Touringcarbedrijven gaan corona-richtlijnen bewust overtreden",
+      "url" : "https://www.oogtv.nl/2020/06/touringcarbedrijven-gaan-corona-richtlijnen-bewust-overtreden/"
+    } ]
+  }
+}

@@ -6,14 +6,18 @@ import android.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.team1.covid19info.R
+import com.team1.covid19info.ui.advice.AdviceViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var adviceViewModel: AdviceViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initNavigation()
+        loadFireBaseData()
     }
 
     fun setToolbarTitle(title: String) {
@@ -28,4 +32,10 @@ class MainActivity : AppCompatActivity() {
             tbTitle.setTextColor(resources.getColor(R.color.colorTitle))
         }
     }
+
+    private fun loadFireBaseData(){
+        adviceViewModel= AdviceViewModel(this)
+        adviceViewModel.getQuestionsFromFireBase()
+    }
+
 }
