@@ -36,7 +36,6 @@ class FeedRvAdapter(private val newsItems: List<NewsItem>) : RecyclerView.Adapte
             itemView.feedrvreadmore.setOnClickListener{
                 listener?.invoke(newsItems[adapterPosition])
             }
-
         }
 
         fun bind(newsItem: NewsItem){
