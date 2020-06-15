@@ -2,18 +2,13 @@ package com.team1.covid19info.model
 
 import com.google.gson.annotations.SerializedName
 
-class AdviceQuestionItem(
-    adviceQuestionId: Long,
-    questionText: String,
-    linkYesAnswerId: Long,
-    linkNoAnswerId: Long
-) :
-    AdviceItem(adviceQuestionId, questionText) {
-
+data class AdviceQuestionItem(
+    @SerializedName("adviceQuestionId")
+    override val adviceQuestionId: Long,
+    @SerializedName("questionText")
+    override val questionText: String,
     @SerializedName("linkYesAnswerId")
-    var linkYesAnswerId: Long? = linkYesAnswerId
-
+    val linkYesAnswerId: Long,
     @SerializedName("linkNoAnswerId")
-    var linkNoAnswerId: Long? = linkNoAnswerId
-
-}
+    val linkNoAnswerId: Long
+) : AdviceItem()
