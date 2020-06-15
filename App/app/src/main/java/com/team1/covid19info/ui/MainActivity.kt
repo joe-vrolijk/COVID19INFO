@@ -6,6 +6,7 @@ import android.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.team1.covid19info.R
+import com.team1.covid19info.ui.advice.AdviceViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

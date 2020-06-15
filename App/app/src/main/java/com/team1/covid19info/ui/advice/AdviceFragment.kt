@@ -1,6 +1,5 @@
 package com.team1.covid19info.ui.advice
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,19 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.team1.covid19info.R
-import com.team1.covid19info.data.AdviseDataRepository
 import kotlinx.android.synthetic.main.fragment_advice.*
+import android.content.Intent
+import android.net.Uri
+import androidx.lifecycle.Observer
+import com.team1.covid19info.model.AdviceAnswerItem
+import com.team1.covid19info.model.AdviceItem
+import com.team1.covid19info.model.AdviceQuestionItem
+
 
 class AdviceFragment : Fragment() {
-    companion object {
-        fun newInstance() = AdviceFragment()
-    }
 
     private lateinit var viewModel: AdviceViewModel
-
-
-    private val repo = AdviseDataRepository()
-    var currentAdviseQuestion: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,65 +27,40 @@ class AdviceFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_advice, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(AdviceViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-        tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
-        btnReset.visibility = View.INVISIBLE
+        btnJa.setOnClickListener { viewModel.clickYes() }
+        btnNee.setOnClickListener { viewModel.clickNo() }
+        btnReset.setOnClickListener { viewModel.resetAdviseQuestion() }
 
-        if (repo.getAdviseText(currentAdviseQuestion) != null) {
-            btnJa.visibility = View.INVISIBLE
-            btnNee.visibility = View.INVISIBLE
+        btnInfo.setOnClickListener {
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.rivm.nl/coronavirus-covid-19/vragen-antwoorden")
+            )
+            startActivity(browserIntent)
         }
-
-        btnJa.setOnClickListener() {
-            currentAdviseQuestion = repo.getLinkYesId(currentAdviseQuestion)
-            if (repo.isAdvice(currentAdviseQuestion)) {
-                btnJa.visibility = View.INVISIBLE
-                btnNee.visibility = View.INVISIBLE
-                tvAdvise.visibility = View.VISIBLE
-                tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-                tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
-            } else {
+        btnReset.setOnClickListener {
+            viewModel.resetAdviseQuestion()
+        }
+        viewModel.currentAdviceItem.observe(viewLifecycleOwner, Observer {
+            tvQuestion.text = it.questionText
+            plLoading.visibility = View.GONE
+            tvQuestion.visibility = View.VISIBLE
+            btnReset.visibility = if (it.adviceQuestionId == 0.toLong() ) View.GONE else View.VISIBLE
+            if (it is AdviceQuestionItem) {
                 btnJa.visibility = View.VISIBLE
                 btnNee.visibility = View.VISIBLE
                 tvAdvise.visibility = View.INVISIBLE
-                tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-            }
-            btnReset.visibility = View.VISIBLE
-        }
-
-        btnNee.setOnClickListener() {
-            currentAdviseQuestion = repo.getLinkNoId(currentAdviseQuestion)
-            if (repo.isAdvice(currentAdviseQuestion)) {
-                btnJa.visibility = View.INVISIBLE
-                btnNee.visibility = View.INVISIBLE
-                tvAdvise.visibility = View.VISIBLE
-                tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-                tvAdvise.text = repo.getAdviseText(currentAdviseQuestion)
+                btnInfo.visibility = View.GONE
             } else {
-                btnJa.visibility = View.VISIBLE
-                btnNee.visibility = View.VISIBLE
-                tvAdvise.visibility = View.INVISIBLE
-                tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
+                btnJa.visibility = View.GONE
+                btnNee.visibility = View.GONE
+                tvAdvise.visibility = View.VISIBLE
+                tvAdvise.text = (it as AdviceAnswerItem).adviceText
+                btnInfo.visibility = View.VISIBLE
             }
-            btnReset.visibility = View.VISIBLE
-        }
-
-        btnReset.setOnClickListener() {
-            currentAdviseQuestion = 0
-            btnJa.visibility = View.VISIBLE
-            btnNee.visibility = View.VISIBLE
-            tvAdvise.visibility = View.INVISIBLE
-            tvQuestion.text = repo.getQuestionText(currentAdviseQuestion)
-            btnReset.visibility = View.INVISIBLE
-        }
+        })
     }
 }
