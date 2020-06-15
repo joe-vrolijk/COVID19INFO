@@ -23,7 +23,9 @@ class AdviceViewModel(context: Context) : ViewModelBase(context) {
         database = FirebaseDatabase.getInstance().reference
         adviseQuestionReference = FirebaseDatabase.getInstance()
             .getReference("adviceQuestions/questionList")
-        }
+        getQuestionsFromFireBase()
+    }
+
 
     fun getQuestionsFromFireBase() {
         adviseQuestionReference!!.addListenerForSingleValueEvent(object : ValueEventListener {
