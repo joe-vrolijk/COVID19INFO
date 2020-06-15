@@ -20,11 +20,6 @@ class AdviceFragment : Fragment() {
 
     private lateinit var viewModel: AdviceViewModel
 
-    private fun initViewModel() {
-        viewModel = AdviceViewModel(requireContext())
-        viewModel.getQuestionsFromFireBase()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,7 +29,6 @@ class AdviceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViewModel()
 
         btnJa.setOnClickListener { viewModel.clickYes() }
         btnNee.setOnClickListener { viewModel.clickNo() }
