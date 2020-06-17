@@ -59,10 +59,10 @@ class FeedFragment : Fragment() {
             viewModel.refreshNewsItems()
             viewModel.newsItems.observe(viewLifecycleOwner, Observer {
                 newsItems.clear()
-                viewModel.getDbNewsItems()
                 newsItems.addAll(it)
                 feedRvAdapter.notifyDataSetChanged()
             })
+
             itemsswipetorefresh.isRefreshing = false
         }
     }

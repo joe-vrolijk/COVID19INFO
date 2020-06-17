@@ -51,8 +51,10 @@ class FeedViewModel(context: Context) : ViewModelBase(context) {
         calls.addLast {
             val response = newsRepository.getCovidNews()
             newsItemsReference!!.setValue(response).addOnSuccessListener {
+                Thread.sleep(1000)
+                Log.i("*** API CALL SUCCESS ***", "Retrieval: " + Instant.now().toString())
+                getDbNewsItems()
             }
         }
-    Log.i("*** API CALL SUCCESS ***", "Retrieval: " + Instant.now().toString())
     }
 }
