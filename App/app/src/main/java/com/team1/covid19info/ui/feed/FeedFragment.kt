@@ -57,12 +57,6 @@ class FeedFragment : Fragment() {
 
         itemsswipetorefresh.setOnRefreshListener {
             viewModel.refreshNewsItems()
-            viewModel.newsItems.observe(viewLifecycleOwner, Observer {
-                newsItems.clear()
-                newsItems.addAll(it)
-                feedRvAdapter.notifyDataSetChanged()
-            })
-
             itemsswipetorefresh.isRefreshing = false
         }
     }
