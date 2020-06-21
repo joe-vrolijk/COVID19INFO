@@ -22,4 +22,14 @@ data class StatisticsCountry(
     val newRecovered: Int,
     @SerializedName("TotalRecovered")
     val totalRecovered: Int
-    )
+    ) {
+    val translatedCountry: String
+        get() = Locale(Locale.getDefault().language, countryCode).displayCountry
+
+//    fun getTranslatedCountry(): String {
+//        if (_translatedCountry == country)
+//            _translatedCountry = Locale(Locale.getDefault().language, countryCode).displayCountry
+//
+//        return _translatedCountry
+//    }
+}

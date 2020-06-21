@@ -1,11 +1,27 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyButtonTheme" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ButtonStyleTextColor</item>
+    </style>
+
+    <style name="ButtonStyleTextColor">
+        <item name="colorOnPrimary">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@color/colorAccent</item>
+        <item name="colorOnSurface">@color/light_white</item>
+        <item name="android:textColor">@color/light_white</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
 </resources>
