@@ -1,4 +1,6 @@
-# MD - Project - Team 1 - COVID-19 INFO
+COVID-19 INFO APP FOR ANDROID
+
+
 
 
 
